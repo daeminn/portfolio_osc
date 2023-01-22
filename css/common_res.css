@@ -1,0 +1,235 @@
+@charset 'UTF-8';
+/* 모바일만 ~767px */
+@media screen and (max-width: 767px) {
+
+   .gnb-wrap{
+      top: -200%;
+      height: 100%;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+   }
+   .gnb-wrap.open {
+      top: 0;
+   }
+   .lang{display: none;}
+   .side-bar-open:hover{
+      background: url('../images/mobile/bars-solid-hover.svg') center center no-repeat;
+   }
+   .profile {position: relative; display: block; color: #fff; text-align: center; padding: 40px;}
+   .profile h2 {
+      position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 2.5em;
+    line-height: 1.4;
+   }
+   .profile h2:after {
+   content: '';
+   position: absolute;
+   display: block;
+   left: 50%;
+   bottom: 0;
+   width: 50px;
+   height: 1px;
+   background-color: #fff;   transform: translateX(-50%);
+
+   }
+   .profile h5 {
+      font-size:1.1em;
+   }
+   #osc-gnb {
+      position: relative;
+      width: 100%;
+   }
+   .depth1>li>a{
+      line-height: 4;
+      font-size: 1.3em;
+   }
+   .depth2 {
+      width: 100%;;
+      background: #999;
+      display: none;
+   }
+   .depth2 {
+      font-size: 1.1em;
+      line-height: 2.5;
+   }
+}
+
+/* 태블릿부터 768px~ */
+@media screen and (min-width: 768px) {
+   
+}
+
+/* 태블릿만 768px~1023px */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+   
+   .gnb-wrap{
+      top: -200%;
+      height: 100%;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+   }
+   .gnb-wrap.open {
+      top: 0;
+   }
+   .lang:hover {
+      color: #f00;
+   }
+   .side-bar-open:hover{
+      background: url('../images/mobile/bars-solid-hover.svg') center center no-repeat;
+   }
+   .profile {position: relative; display: block; color: #fff; text-align: center; padding: 60px;}
+   .profile h2 {
+      position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 2.5em;
+    line-height: 1.4;
+   }
+   .profile h2:after {
+   content: '';
+   position: absolute;
+   display: block;
+   left: 50%;
+   bottom: 0;
+   width: 60px;
+   height: 1px;
+   background-color: #fff;   transform: translateX(-50%);
+
+   }
+   .profile h5 {
+      font-size:1.5em;
+   }
+   #osc-gnb {
+      position: relative;
+      width: 100%;
+   }
+   .depth1>li>a{
+      line-height: 4;
+      font-size: 1.3em;
+   }
+   .depth2 {
+      width: 100%;;
+      background: #999;
+      display: none;
+   }
+   .depth2 {
+      font-size: 1.1em;
+      line-height: 2.5;
+   }
+}
+
+/* PC부터 1024px~ */
+@media screen and (min-width: 1024px) {
+   .side-bar-close {
+      opacity: 0;
+   }
+   .osc-logo a {
+      width: 250px;
+      height: 80px;
+   }
+   .gnb-wrap{
+      top:80px;
+   }
+   #osc-gnb {
+      width: 100%;
+      height: 3.2em;
+
+   }
+   #osc-hd, .osc-logo a, .lang {
+      transition: 0.2s;
+   }
+   .depth1>li>a {
+      font-size: 1.3em;
+   }
+   .depth2 {
+      position: absolute;
+      width: 100%;
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: 0.5s;
+   }
+   .depth2:hover {
+      background: rgba(255,255,255,0.2);
+   }
+   .depth2 a:hover {
+      background: #fff;
+      color: #000;
+      font-weight: 500;
+   }
+   #osc-hd.active{
+      background: #000;
+      color: #fff;
+   }
+   #osc-hd.active .osc-logo a {
+      background: url('../images/logo_wh.png') center center / contain no-repeat;
+   }
+   #osc-hd.active .side-bar-open {
+      background: url('../images/mobile/bars-solid-wh.svg') center center no-repeat;
+   }
+   #osc-hd.active .side-bar-open:hover {
+      background: url('../images/mobile/bars-solid-hover.svg') center center no-repeat;
+   }
+   #osc-hd.active .gnb-wrap {
+      height: 350px;
+      background: #000;
+   }
+   #osc-hd.active #osc-gnb {
+      border-color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.5);
+   }
+   #osc-hd.active .depth1 {
+      height: 350px;
+   }
+   #osc-hd.active .depth1 > li {      
+      border-color: rgba(255,255,255,0.3);
+      height: 100%;
+      opacity: 1;
+   }
+   #osc-hd.active .depth2 {
+      height: calc(350px - 3.3em);
+      opacity: 1;
+   }
+   #osc-hd.active .lang {
+      color: #fff;
+   }
+   #osc-hd.active .lang:hover {
+      color: #f00;
+   }
+   #osc-hd.active .depth1 a {
+      padding: 0 10px;
+   }
+   .depth1 {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+   }
+   .depth1>li, .depth2{
+      width: 14%;
+   }
+   .depth1>li {
+      height: 0;
+   }
+   .attr-nav {
+      right: 60px;
+   }
+}
+
+/* 작은 PC 1024px~1279px */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+
+}
+
+/* PC 1280px~ */
+@media screen and (min-width: 1280px) {
+   .depth1>li, .depth2{
+      width: 12%;
+   }
+   .attr-nav {
+      right: 120px;
+   }
+}

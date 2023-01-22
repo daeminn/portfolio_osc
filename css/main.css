@@ -1,0 +1,16 @@
+#osc-main {
+}
+#osc-main .section {
+   position: relative;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+.sec-intro {
+   background-image: url('../images/60dd72b76895c3feac76b487e1a2f4a3.jpg');
+}
+.sec-dev {
+   background-image: url('../images/ea71cc88c8aba486861d21238b8ce3a4.jpg');
+}
+.sec-emp {
+   background-image: url('../images/d0a96ca89afb197b498958281015e159.jpg');
+}
