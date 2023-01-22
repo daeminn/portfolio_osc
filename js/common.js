@@ -9,10 +9,12 @@ $(window).ready(function () {
    let gnbWrap = $('.gnb-wrap');
    let sideBar = $('.side-bar');
    let depth1a = $('.depth1>li>a')
+   
    rwd();
 
    $(window).resize(function () {
       rwd();
+      reset();
    });
 
    function rwd() {
@@ -20,6 +22,7 @@ $(window).ready(function () {
       wH = window.innerHeight;
       if (wW < 768) {
          body.addClass("mo").removeClass("tb pc");
+         $(".depth2").stop().slideUp();
       } else if (wW >= 768 && wW < 1280) {
          body.addClass("tb").removeClass("mo pc");
       } else {
@@ -27,6 +30,19 @@ $(window).ready(function () {
       }
    }
 
+   function reset() {
+      hdH = hd.height();
+      gnbReset();
+  }
+
+  function gnbReset() {
+      if (body.hasClass("mo")) {
+          $(".depth2").stop().slideUp();
+      } else {
+          $(".depth2").stop().slideDown();
+      }
+  }
+  
 //모바일 GNB 작동
 $(".depth1>li").on({
    "click": (function () {
@@ -57,6 +73,7 @@ $(".depth1>li").on({
       "click": function () {
          if (body.hasClass("mo")||body.hasClass("tb")) {
             gnbWrap.addClass("open")
+            $(".depth2").stop().slideUp();
          }
       }
    });
@@ -64,6 +81,7 @@ $(".depth1>li").on({
       "click": function () {
          if (body.hasClass("mo")||body.hasClass("tb")) { 
             gnbWrap.removeClass("open")
+            $(".depth2").stop().slideUp();
          }
       }
    });

@@ -1,9 +1,7 @@
 #osc-main {
 }
 #osc-main .section {
-   position: relative;
    background-repeat: no-repeat;
-   background-position: center;
 }
 .sec-intro {
    background-image: url('../images/60dd72b76895c3feac76b487e1a2f4a3.jpg');

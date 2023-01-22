@@ -16,7 +16,7 @@
    .side-bar-open:hover{
       background: url('../images/mobile/bars-solid-hover.svg') center center no-repeat;
    }
-   .profile {position: relative; display: block; color: #fff; text-align: center; padding: 40px;}
+   .profile {position: relative; display: block; color: #fff; text-align: center; padding: 50px;}
    .profile h2 {
       position: relative;
     padding-bottom: 10px;
@@ -97,7 +97,8 @@
    bottom: 0;
    width: 60px;
    height: 1px;
-   background-color: #fff;   transform: translateX(-50%);
+   background-color: #fff;   
+   transform: translateX(-50%);
 
    }
    .profile h5 {
@@ -127,23 +128,33 @@
    .side-bar-close {
       opacity: 0;
    }
+   #osc-hd {
+      transition: 0.5s;
+      height: 132px;
+   }
    .osc-logo a {
       width: 250px;
       height: 80px;
    }
    .gnb-wrap{
       top:80px;
+      height: 60px;
+      border-bottom: 1px solid transparent;
+      background: transparent;
+      transition: 0.5s;
    }
    #osc-gnb {
       width: 100%;
       height: 3.2em;
-
    }
    #osc-hd, .osc-logo a, .lang {
-      transition: 0.2s;
+      transition: 0.5s;
    }
    .depth1>li>a {
       font-size: 1.3em;
+      color: #555;
+      font-weight: 500;
+      transition: 0.4s;
    }
    .depth2 {
       position: absolute;
@@ -162,8 +173,9 @@
       font-weight: 500;
    }
    #osc-hd.active{
-      background: #000;
-      color: #fff;
+      background: transparent;
+      backdrop-filter: blur(15px);
+      height: 430px;
    }
    #osc-hd.active .osc-logo a {
       background: url('../images/logo_wh.png') center center / contain no-repeat;
@@ -174,13 +186,18 @@
    #osc-hd.active .side-bar-open:hover {
       background: url('../images/mobile/bars-solid-hover.svg') center center no-repeat;
    }
+   #osc-hd.active .depth2 a:hover {
+   color: #000;
+   } 
    #osc-hd.active .gnb-wrap {
       height: 350px;
-      background: #000;
+      background: transparent;
+      border-color: rgba(255,255,255,0.5);
+      transition: 0.3s;
    }
    #osc-hd.active #osc-gnb {
       border-color: rgba(255,255,255,0.5);
-      background: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.3);
    }
    #osc-hd.active .depth1 {
       height: 350px;
@@ -193,6 +210,7 @@
    #osc-hd.active .depth2 {
       height: calc(350px - 3.3em);
       opacity: 1;
+
    }
    #osc-hd.active .lang {
       color: #fff;
@@ -202,6 +220,7 @@
    }
    #osc-hd.active .depth1 a {
       padding: 0 10px;
+      color: #fff;
    }
    .depth1 {
       display: flex;

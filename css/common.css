@@ -125,3 +125,25 @@
 }
 #osc-ft {
 }
+
+
+/* 스크롤시 헤더고정 */
+#osc-hd.fixed {
+   position: fixed;
+   animation: hd-ani 0.3s ease;
+   background: transparent;
+   /* background: -moz-linear-gradient(-45deg,  #1e72d8 40%,#0d69db 50%,#0c51a9 100%);
+           background: -webkit-linear-gradient(-45deg,  #1e72d8 40%,#0d69db 50%,#0c51a9 100%);
+           background: linear-gradient(135deg,  #1e72d8 40%,#0d69db 50%,#0c51a9 100%);
+           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e72d8', endColorstr='#176ed8',GradientType=1 ); */
+}
+
+@keyframes hd-ani {
+   0% {
+       opacity: 0;
+   }
+
+   100% {
+       opacity: 1;
+   }
+}
