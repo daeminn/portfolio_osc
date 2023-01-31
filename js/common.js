@@ -4,12 +4,14 @@ $(window).ready(function () {
    const body = $("body");
    const hd = $('#osc-hd');
    let hdH = hd.innerHeight;
-   let sideBarOpener = $('.side-bar-open');
-   let sideBarCloser = $('.side-bar-close');
+   let gnbOpener = $('.gnb-open');
+   let gnbCloser = $('.gnb-close');
    let gnbWrap = $('.gnb-wrap');
-   let sideBar = $('.side-bar');
    let depth1a = $('.depth1>li>a')
-   
+   let menuPullDown = $('.menu-open');
+   let menuCloser = $('.all-menu-close');
+   let allMenu = $('#all-menu');
+
    rwd();
 
    $(window).resize(function () {
@@ -23,10 +25,11 @@ $(window).ready(function () {
       if (wW < 768) {
          body.addClass("mo").removeClass("tb pc");
          $(".depth2").stop().slideUp();
-      } else if (wW >= 768 && wW < 1280) {
+      } else if (wW >= 768 && wW < 1024) {
          body.addClass("tb").removeClass("mo pc");
       } else {
          body.addClass("pc").removeClass("mo tb");
+         
       }
    }
 
@@ -36,21 +39,18 @@ $(window).ready(function () {
   }
 
   function gnbReset() {
-      if (body.hasClass("mo")) {
-          $(".depth2").stop().slideUp();
-      } else {
-          $(".depth2").stop().slideDown();
+      if (body.hasClass("mo")||body.hasClass("tb")){
       }
   }
   
+  
+
 //모바일 GNB 작동
 $(".depth1>li").on({
    "click": (function () {
        if (body.hasClass("mo")||body.hasClass("tb")) {
-           $(this).children(depth1a).toggleClass("show");
            $(this).children(".depth2").stop().slideToggle(300);
            $(this).siblings().find(".depth2").stop().slideUp(300);
-           $(this).siblings().children().removeClass('show');
        }
    })
 });
@@ -58,7 +58,7 @@ $(".depth1>li").on({
    hd.on({
       "mouseenter": function () {
          if (body.hasClass("pc") || body.hasClass("tb")) {
-            $(this).addClass(("active"));
+            $(this).addClass("active");
          }
       },
       "mouseleave": function () {
@@ -67,17 +67,15 @@ $(".depth1>li").on({
          }
       }
    });
-
    
-   sideBarOpener.on({
+   gnbOpener.on({
       "click": function () {
          if (body.hasClass("mo")||body.hasClass("tb")) {
-            gnbWrap.addClass("open")
-            $(".depth2").stop().slideUp();
+            gnbWrap.addClass("open");
          }
       }
    });
-   sideBarCloser.on({
+   gnbCloser.on({
       "click": function () {
          if (body.hasClass("mo")||body.hasClass("tb")) { 
             gnbWrap.removeClass("open")
@@ -85,4 +83,20 @@ $(".depth1>li").on({
          }
       }
    });
+   menuPullDown.on ({
+      "click":function() {
+         if (body.hasClass("pc")) {
+            allMenu.addClass("down");
+            $(this).fadeOut();
+         }
+      }
+   })
+   menuCloser.on ({
+      "click":function() {
+         if (body.hasClass("pc")) {
+            allMenu.removeClass("down");
+            menuPullDown.fadeIn();
+         }
+      }
+   })
 })

@@ -1,14 +1,234 @@
 #osc-main {
+   position: relative;
+   width: 100%;
 }
-#osc-main .section {
+.section {
+   width: 100%;
+   height: 100%;
+   background-size: 100% 100%
+}
+.sec00 {
    background-repeat: no-repeat;
+   background-image: url('../images/main1A.jpg');
+   color: #fff;
 }
-.sec-intro {
-   background-image: url('../images/60dd72b76895c3feac76b487e1a2f4a3.jpg');
+/* .sec-intro>.mask::after{
+   display: block;
+   width: 100%;
+   height: 100%;
+   background: #000;
+   content: '';
+   opacity: 0.3;
+   z-index: 0;
+} */
+.intro-wrap {
+   position: absolute;
+   top: 30%;
+   left: 10%;
+   display: inline-block;
+   background:rgba(0,0,0,0.5);
+   padding: 50px;
+   z-index: 1;
 }
-.sec-dev {
-   background-image: url('../images/ea71cc88c8aba486861d21238b8ce3a4.jpg');
+
+.intro-title {
+   display: block;
+   font-size: 3em;
+   cursor: pointer;
+   z-index: 1;
+   padding-bottom: 10px;
 }
-.sec-emp {
-   background-image: url('../images/d0a96ca89afb197b498958281015e159.jpg');
+.intro-title2 {
+   padding-top: 40px;
+}
+.intro-text {
+   word-break: keep-all;
+}
+
+.more {
+   position: absolute;
+   top:0;
+   right:0;
+   display:inline-block;
+   padding: 20px;
+   color: #fff;
+   font-size: 1.2em;
+   background: transparent;
+   transition: 0.3s;
+   transform-origin: left;
+}
+.more::before {   
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   display: block;
+   content: '';
+   width: 100%;
+   height: 100%;
+   background:#338FCD;
+   transition-duration: 0.3s;
+   z-index: -1;
+   transform: scaleX(0);
+   transform-origin: left;
+}
+.more:hover::before{
+   transform: scaleX(1);
+}
+
+.sec01 {   
+   position: relative;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+.sec01-box {
+   display: table;
+   width: 100%;
+   height: 100%;
+}
+.dev-bg:after,.bsn-bg:after {
+   position: absolute;
+   display: block;
+   content: '';
+   background: #000;
+   width: 100%;
+   height: 100%;
+   opacity: 0.5;
+   transition: 0.7s;
+}
+.develop, .business {
+   display: table-cell;
+   top: 0;
+   width: 50%;
+   transition:ease-in-out 0.3s;
+}
+.develop {left: 0;}
+.business {right: 0;}
+
+
+.dev-bg, .bsn-bg {
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+.dev-bg {
+   background-image: url('../images/main2A.jpg');
+}
+.bsn-bg {   
+   background-image: url('../images/main2B.jpg');
+}
+
+.develop:hover .dev-bg:after,.business:hover .bsn-bg:after {opacity: 0.4;}
+.develop:hover .dev-list,
+.business:hover .bsn-list {
+   opacity: 1;
+}
+
+.sec01-box h2 {
+   color: #fff;
+   font-size: 3em;
+}
+.dev-tit, .bsn-tit {
+   position: absolute;
+}
+.dev-tit {
+   top: 200px;
+   left: 50px;
+}
+.bsn-tit {
+   bottom: 100px;
+   right: 50px;
+}
+.dev-list, .bsn-list {
+   position: absolute;
+   color: #fff;
+   font-size: 1.2em;
+   line-height: 2.5;
+   width: 25%;
+}
+
+.dev-list>li:after, .bsn-list-title:after, .bsn-list>li>a:after, .bsn-list ul a::after {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 1px;
+   display: block;
+   content: '';
+   background: #fff;
+   transform: scaleX(0);
+   transform-origin: left;
+   transition: 0.3s;
+}
+.dev-list>li:hover:after, .bsn-list>li>a:hover:after, .bsn-list ul a:hover:after {transform: scaleX(1);}
+.dev-list>li a, .bsn-list>li>a, .bsn-list ul a {transition: 0.3s;}
+.dev-list>li a:hover, .bsn-list>li>a:hover, .bsn-list ul a:hover {color: #fff;}
+
+.dev-list {
+   bottom: 15%;
+   left: 50px;
+}
+.bsn-list {
+   top: 12%;
+   right: 50px;
+}
+.dev-list, .bsn-list {
+   opacity: 0;
+   transition: 0.3s;
+}
+.dev-list li {
+   position: relative;
+}
+.dev-list a, .bsn-list ul a  {
+   color: #eee;
+   display: block;
+   width: 100%;
+   height: 100%;
+   border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+.bsn-list li {
+   position: relative;
+}
+.bsn-list-title {
+   color: #dedede;
+   margin-top: 30px;
+}
+
+.sec02 {
+   
+   margin: 0 auto;
+}
+
+.news-box {
+   display: flex;
+   flex-wrap: wrap;
+}
+.news-li {
+   width: 30%;
+   gap: 30%;
+}
+
+
+
+/* 풀페이지 네비게이션 */
+#fp-nav {
+   top: calc(50% + 14px);
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+   background-color: #fff;
+}
+#fp-nav li:last-child {
+   display: none;
+}
+
+/* 구글아이콘 */
+.dev-list .material-symbols-outlined,
+.bsn-list .material-symbols-outlined {
+   position: absolute;
+   left: 93%;
+   top: 0.65em;
 }

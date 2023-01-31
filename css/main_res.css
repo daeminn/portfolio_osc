@@ -1,6 +1,9 @@
 /* 모바일만 ~767px */
 @media screen and (max-width: 767px) {
-    
+    .intro-wrap {
+      left: inherit;
+      width: auto;
+    }
 }
 
 /* 태블릿부터 768px~ */
@@ -24,17 +27,4 @@
 
 /* PC 1280px~ */
 @media screen and (min-width: 1280px) {
-   .section {
-      background: center 100% / cover no-repeat;
-   }
-   .sec-intro {
-   
-      background-image: url('../images/60dd72b76895c3feac76b487e1a2f4a3.jpg');
-   }
-   .sec-dev {
-      background-image: url('../images/ea71cc88c8aba486861d21238b8ce3a4.jpg');
-   }
-   .sec-emp {
-      background-image: url('../images/d0a96ca89afb197b498958281015e159.jpg');
-   }
 }
