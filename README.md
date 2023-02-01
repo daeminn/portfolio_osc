@@ -8,4 +8,4 @@
 z-index를 주는 등 여러 방법을 시도해보다가 선생님에게 질문을 통해 상위영역에 display:table을 주고 좌우 영역에 table-cell을 활용하면 될 것같다고 하셨고 
 display table-cell은 한쪽 영역이 변하면 반대쪽 영역의 너비도 자동으로 조절된다는것을 배울 수 있었습니다.
 
-0201 section 1,3번째에 css animation효과를 주었습니다.
+0201 section에 애니메이션효과와 모바일반응형구현
