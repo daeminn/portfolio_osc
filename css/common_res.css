@@ -88,7 +88,9 @@
       display: flex;
       justify-content: center;
    }
-   
+   .ft-logo a{height: 100%;}
+   .ft-info {margin: auto 50px;}
+   .info-block {padding: 0;}
 }
 
 /* 태블릿만 768px~1023px */
@@ -161,7 +163,8 @@
    display: none;
 }
    #osc-main.fp-viewing-1 #osc-hd,
-   #osc-main.fp-viewing-2 #osc-hd{
+   #osc-main.fp-viewing-2 #osc-hd,
+   #osc-main.fp-viewing-3 #osc-hd{
       background: rgba(0,0,0,0.5);
       backdrop-filter: blur(10px);
    }

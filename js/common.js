@@ -25,6 +25,7 @@ $(window).ready(function () {
       if (wW < 768) {
          body.addClass("mo").removeClass("tb pc");
          $(".depth2").stop().slideUp();
+         $(".section").addClass("fp-auto-height");
       } else if (wW >= 768 && wW < 1024) {
          body.addClass("tb").removeClass("mo pc");
       } else {

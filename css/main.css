@@ -38,14 +38,14 @@
    overflow: hidden;
    transform: scaleX(0);
 }
-@keyframes introTyping {
+@keyframes intro-typing {
    from {width: 0;}
    to {width: 100%;}
 }
 
 #osc-main.fp-viewing-0 .intro-title-wrap {   
    overflow: hidden;
-   animation: introTyping 0.6s linear 0.3s both;
+   animation: intro-typing 0.6s linear 0.3s both;
 }
 #osc-main.fp-viewing-0 .intro-wrap {
    opacity: 1;
@@ -221,57 +221,55 @@
 .sec02 {}
 .news-wrap {
    position: relative;
+   width: 100%;
    height: 100%;
-   overflow: hidden;
 }
 
 .news-tit {
    position: relative;
+   left: 5%;
    top: 30%;
    height: 100%;
-   width: 28%;
    white-space: nowrap;
    overflow: hidden;
 }
 
 #osc-main.fp-viewing-2 .news-tit  {
    animation:
-      typing 0.5s linear 0.5s both;
+      typing 1.2s linear 0.2s both;
 }
 @keyframes typing {
    from { width: 0;}
-   to { width: 28%;}
+   to { width: 35%;}
 }
 
 .news-tit h2 {
    position: absolute;
-   left: 50px;
    font-size: 3em;
    height: 1.5em;
 }
 .news-tit p {
    position: absolute;
    top: 6%;
-   left: 50px;
    display: -webkit-box;
    overflow: hidden;
    -webkit-line-clamp:1;
    text-overflow: ellipsis;
    font-size: 1.3em;
    font-weight: 500;
+   z-index: 1;
 }
 .news-tit>.more {
-   left: 100px;
    top: 15%;
    right: inherit;
    font-weight: 600;
-   color: #000;
+   color: #fff;
    padding: 20px 40px;
    transition: 0.3s;
    z-index: 1;
 }
 .news-tit>.more:hover {color: #fff;}
-.news-tit>.more::before {transform: scaleX(1);}
+.news-tit>.more::before {width: 100%; transform: scaleX(1);}
 .news-tit>.more:hover::before {
    border-radius: 60px 0 60px 0;
 }
@@ -285,21 +283,33 @@
 .news-box {
    position: absolute;
    top: 28%;
-   left: 30%;
-   display: flex;
-   flex-wrap: wrap;
+   left: 35%;
    width: 65%;
-   gap: 10px;
+   overflow: hidden;
+   transition: 0.4s;
 }
-#osc-main.fp-viewing-2 .news-wrap {
-   animation: introTyping 1s;
+#osc-main.fp-viewing-2 .news-title {
+   animation: intro-typing 0.5s linear 0.2s both;
 }
-
+@keyframes news-typing {
+   from {opacity: 0; width: 33%;}
+   to {opacity: 1; width: 100%;}
+}
+@keyframes news-box {
+   from {opacity: 0;}
+   to { opacity: 1;}
+}
+#osc-main.fp-viewing-2 .news-box {
+   animation: news-box 0.5s linear 0.2s both;
+}
+#osc-main.fp-viewing-2 .news-li-tit,
+#osc-main.fp-viewing-2 .news-txt,
+#osc-main.fp-viewing-2 .news-date {
+   animation: news-typing 0.5s linear 0.2s both;
+}
 .news-li {
    position: relative;
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
+   float: left;
    width: 30%;
    outline: 1px solid rgba(0,0,0,0.1);
    padding: 20px;
@@ -346,20 +356,57 @@
 }
 .news-date {
    font-size: 0.9em;
+   opacity: 1;
+   transition: 0.5s;
+   overflow: hidden;
 }
 
 /* 풀페이지 네비게이션 */
-#fp-nav {
-   top: calc(50% + 14px);
+#fp-nav ul li {
+   margin: 30px;
 }
-
-#fp-nav ul li a span, .fp-slidesNav ul li a span {
+#fp-nav ul li .fp-tooltip {
+   top:-5px; 
+   font-size: 20px;
+}
+#fp-nav ul li:hover a span:hover {
+   margin-left: -4px;
+}
+#fp-nav ul li:hover a span {
+   width: 16px;
+   height: 16px;
+   margin: -6px 0 0 -4px;
+}
+#fp-nav ul li .fp-tooltip.fp-right {
+   right: 30px;
+}
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span {
+   height: 18px;
+   width: 18px;
+   margin: -6px 0 0 -5px;
+}
+#fp-nav ul li a span {
    background-color: #fff;
+   width: 10px; height: 10px;
+}
+#fp-nav ul li a.active span {
+   width: 20px; height: 20px;
+   margin: -6px 0 0 -7px;
+}
+#fp-nav ul li a.active span:hover {
+   width: 18px; height: 18px;
 }
 #fp-nav li:last-child {
    display: none;
 }
-
+#osc-main.fp-viewing-2 #fp-nav ul li a span,
+#osc-main.fp-viewing-3 #fp-nav ul li a span {
+   background-color: rgba(0,0,0,0.7);
+}
+#osc-main.fp-viewing-2 #fp-nav ul li .fp-tooltip,
+#osc-main.fp-viewing-3 #fp-nav ul li .fp-tooltip {
+   color: rgba(0,0,0,0.7);;
+}
 /* 구글아이콘 */
 .dev-list .material-symbols-outlined,
 .bsn-list .material-symbols-outlined {
