@@ -80,7 +80,7 @@
    left: 0;
    display: block;
    content: '';
-   width: 100%;
+   width: 0;
    height: 100%;
    background:#0a58ca;
    transition: 0.3s;
@@ -89,6 +89,7 @@
    z-index: -1;
 }
 .more:hover::before{
+   width: 100%;
    transform: scaleX(1);
 }
 
