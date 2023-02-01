@@ -7,6 +7,9 @@
    height: 100%;
    background-size: 100% 100%
 }
+
+/* section00 */
+
 .sec00 {
    background-repeat: no-repeat;
    background-image: url('../images/main1A.jpg');
@@ -29,8 +32,25 @@
    background:rgba(0,0,0,0.5);
    padding: 50px;
    z-index: 1;
+   white-space: nowrap;
+   opacity: 0;
+   transition: 0.5s;
+   overflow: hidden;
+   transform: scaleX(0);
+}
+@keyframes introTyping {
+   from {width: 0;}
+   to {width: 100%;}
 }
 
+#osc-main.fp-viewing-0 .intro-title-wrap {   
+   overflow: hidden;
+   animation: introTyping 0.6s linear 0.3s both;
+}
+#osc-main.fp-viewing-0 .intro-wrap {
+   opacity: 1;
+   transform: scaleX(1);
+}
 .intro-title {
    display: block;
    font-size: 3em;
@@ -49,13 +69,10 @@
    position: absolute;
    top:0;
    right:0;
-   display:inline-block;
-   padding: 20px;
+   display: inline-block;
+   padding: 30px 40px;
    color: #fff;
    font-size: 1.2em;
-   background: transparent;
-   transition: 0.3s;
-   transform-origin: left;
 }
 .more::before {   
    position: absolute;
@@ -65,16 +82,17 @@
    content: '';
    width: 100%;
    height: 100%;
-   background:#338FCD;
-   transition-duration: 0.3s;
-   z-index: -1;
+   background:#0a58ca;
+   transition: 0.3s;
    transform: scaleX(0);
    transform-origin: left;
+   z-index: -1;
 }
 .more:hover::before{
    transform: scaleX(1);
 }
 
+/* section01 */
 .sec01 {   
    position: relative;
    top: 0;
@@ -91,11 +109,11 @@
    position: absolute;
    display: block;
    content: '';
-   background: #000;
+   background: rgba(0,0,0,0.5);
    width: 100%;
    height: 100%;
    opacity: 0.5;
-   transition: 0.7s;
+   transition: 0.5s;
 }
 .develop, .business {
    display: table-cell;
@@ -121,7 +139,8 @@
    background-image: url('../images/main2B.jpg');
 }
 
-.develop:hover .dev-bg:after,.business:hover .bsn-bg:after {opacity: 0.4;}
+.develop:hover .dev-bg:after{background: rgba(0,0,0,0.4);}
+.business:hover .bsn-bg:after {background: rgba(0,0,0,0.2);}
 .develop:hover .dev-list,
 .business:hover .bsn-list {
    opacity: 1;
@@ -197,21 +216,133 @@
    margin-top: 30px;
 }
 
-.sec02 {
-   
-   margin: 0 auto;
+/* section02 */
+.sec02 {}
+.news-wrap {
+   position: relative;
+   height: 100%;
+   overflow: hidden;
 }
 
+.news-tit {
+   position: relative;
+   top: 30%;
+   height: 100%;
+   width: 28%;
+   white-space: nowrap;
+   overflow: hidden;
+}
+
+#osc-main.fp-viewing-2 .news-tit  {
+   animation:
+      typing 0.5s linear 0.5s both;
+}
+@keyframes typing {
+   from { width: 0;}
+   to { width: 28%;}
+}
+
+.news-tit h2 {
+   position: absolute;
+   left: 50px;
+   font-size: 3em;
+   height: 1.5em;
+}
+.news-tit p {
+   position: absolute;
+   top: 6%;
+   left: 50px;
+   display: -webkit-box;
+   overflow: hidden;
+   -webkit-line-clamp:1;
+   text-overflow: ellipsis;
+   font-size: 1.3em;
+   font-weight: 500;
+}
+.news-tit>.more {
+   left: 100px;
+   top: 15%;
+   right: inherit;
+   font-weight: 600;
+   padding: 20px 40px;
+   z-index: 1;
+}
+.news-tit>.more::before {transform: scaleX(1);}
+.news-tit>.more:hover::before {
+   border-radius: 60px 0 60px 0;
+}
+.news-bg {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background: url('../images/main3.jpg') 100% 100% / cover no-repeat;
+   opacity: 0.6;
+}
 .news-box {
+   position: absolute;
+   top: 28%;
+   left: 30%;
    display: flex;
    flex-wrap: wrap;
+   width: 65%;
+   gap: 10px;
 }
+#osc-main.fp-viewing-2 .news-wrap {
+   animation: introTyping 1s;
+}
+
 .news-li {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
    width: 30%;
-   gap: 30%;
+   outline: 1px solid rgba(0,0,0,0.1);
+   padding: 20px;
+   backdrop-filter: blur(5px);
+   background: rgba(255,255,255,0.5);
+   transition: 0.3s;
+
 }
-
-
+.news-li:after {
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;
+   width: 100%;
+   height: 100%;
+   transform: scale(0,1);
+   transform-origin: bottom;
+   transition: 0.5s;
+   content: '';
+   z-index: -1;
+}
+.news-li:hover::after {
+   transform: scale(1);
+   background: rgb(10, 88, 202,0.7);
+}
+.news-li:hover { color: #fff;}
+.news-li-tit {
+   font-size: 1.5em;
+   font-weight: 500;
+   display: -webkit-box;
+   width: 100%;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+}
+.news-txt {
+   display: -webkit-box;
+   width: 100%;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   margin: 10px 0;
+}
+.news-date {
+   font-size: 0.9em;
+}
 
 /* 풀페이지 네비게이션 */
 #fp-nav {

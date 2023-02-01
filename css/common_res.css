@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+   @charset 'UTF-8';
 /* 모바일만 ~767px */
 @media screen and (max-width: 767px) {
    #osc-hd {
@@ -79,13 +79,14 @@
 /* 태블릿부터 768px~ */
 @media screen and (min-width: 768px) {
    
-.attr-nav *{color: #000;}
-   #osc-ft .ft-wrap {
+   .attr-nav *{color: #000;}
+   .ft-wrap {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
    }
    .ft-info-wrap {
       display: flex;
+      justify-content: center;
    }
    
 }
@@ -161,11 +162,10 @@
 }
    #osc-main.fp-viewing-1 #osc-hd,
    #osc-main.fp-viewing-2 #osc-hd{
-      background: transparent;
-      backdrop-filter: contrast(0.5) blur(10px);
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
    }
    #osc-main.fp-viewing-2 #osc-hd {
-      backdrop-filter: contrast(0.1);;
    }
    .gnb-open, .gnb-close {
       display: none;
@@ -176,7 +176,8 @@
       right: 30px;
       display: block;
       color: #fff;
-      font-size: 1em;
+      line-height: 4.8;
+      font-size: 1.1em;
       transition: 0.3s;
    }
    
@@ -186,7 +187,7 @@
    .all-menu-close {
       position: absolute;
       top: 30px;
-      right: 100px;
+      right: 105px;
       width: 35px;
       height: 40px;
       background: url('../images/mobile/xmark-solid.svg') center center no-repeat;      
@@ -358,7 +359,7 @@
       display: flex;
       width: 85%;
       height: 100px;
-      line-height: 5;
+      line-height: 6;
    }
    .depth1>li:hover:after {
       transform: scaleX(0.75);
@@ -383,7 +384,7 @@
 
    .depth1 > li > a {
       width: 100%;
-      font-size: 1.3em;
+      font-size: 1.1em;
    }
    .depth1 a {
       width: 100%;
@@ -395,14 +396,8 @@
       font-size: 0.9em;
       line-height: 0;
       opacity: 0;
+      color: rgba(255,255,255,0.8);
       overflow: hidden;
-   }
-   .depth2:hover {
-   }
-   .depth2 a:hover {
-      background: rgba(255,255,255,0.8);
-      color: #000;
-      font-weight: 500;
    }
    #osc-hd.active {
    }
@@ -410,8 +405,9 @@
       outline-color: rgba(255,255,255,0.9);
    }
    #osc-hd.active .depth2 a:hover {
-   color: #000;
-   } 
+      color: rgba(255,255,255,1);
+      font-weight: 500;
+   }
    #osc-hd.active .gnb-wrap {
       background-color: rgba(0,0,0,0.5);
       height: 581px;
@@ -465,8 +461,6 @@
       position: relative;
       top: 5px;
       right: 5%;
-      line-height: 5;
-      font-size: 1.1em;
   }
 
 }
