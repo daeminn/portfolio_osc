@@ -1,6 +1,6 @@
 $(function(){
   const fpCon = $("#osc-main-container");
-  let ftEl = $(".ft-wrap").clone();
+  let ftEl = $("#osc-ft").clone().addClass("section fp-auto-height");;
   fpCon.append(ftEl);
   fpCon.fullpage({
      navigation: true,
@@ -10,6 +10,7 @@ $(function(){
    });
 
    
+   /* table cell 커튼 */
    function section01(){
     let develop = $('.develop');
     let business = $('.business');
