@@ -1,5 +1,9 @@
 # portfolio_osc
 
+https://oscotec.com/Oscotec 
+//원본페이지
+
+
 풀페이지로 리뉴얼하였고 
 
 메뉴의 language대신 사이트맵을 추가하였습니다.
