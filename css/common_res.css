@@ -25,7 +25,7 @@
    }
    .lang{display: none;}
 
-   .menu-open:hover{
+   .all-menu-open:hover{
    }
    .profile {position: relative; display: block; color: #fff; text-align: center; padding: 60px 0 40px;}
    .profile h2 {
@@ -79,7 +79,6 @@
 /* 태블릿부터 768px~ */
 @media screen and (min-width: 768px) {
    
-   .attr-nav *{color: #000;}
    .ft-wrap {
       display: flex;
       flex-direction: column;
@@ -173,7 +172,7 @@
    .gnb-open, .gnb-close {
       display: none;
    }
-   .menu-open{
+   .all-menu-open{
       position: absolute;
       top: 5px;
       right: 30px;
@@ -184,13 +183,13 @@
       transition: 0.3s;
    }
    
-   .menu-open:hover{
+   .all-menu-open:hover{
       color: #f00;
    }
    .all-menu-close {
       position: absolute;
       top: 30px;
-      right: 105px;
+      right: 5%;
       width: 35px;
       height: 40px;
       background: url('../images/mobile/xmark-solid.svg') center center no-repeat;      
@@ -403,6 +402,10 @@
       overflow: hidden;
    }
    #osc-hd.active {
+      
+   }
+   .gnb-wrap.color {
+      background-color: rgba(0,0,0,0.5);
    }
    #osc-hd.active .hd-wrap {
       outline-color: rgba(255,255,255,0.9);
@@ -412,7 +415,6 @@
       font-weight: 500;
    }
    #osc-hd.active .gnb-wrap {
-      background-color: rgba(0,0,0,0.5);
       height: 581px;
    }
    #osc-hd.active .depth1 {
@@ -438,7 +440,6 @@
 
 /* 작은 PC 1024px~1279px */
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
-
 }
 
 /* PC 1280px~ */
@@ -460,10 +461,21 @@
    }
    
    .lang {color: #ededed;}
-   .menu-open{
+   .all-menu-open{
       position: relative;
-      top: 5px;
+      top: 15px;
       right: 5%;
   }
+  .all-menu-open > .material-symbols-outlined {
+      font-size: 35px;
+  }
 
+  .login-form {
+   position: fixed;
+   top: 100px;
+   right: -300px;
+   padding: 100px 50px;
+   z-index: 10;
+   background-color: #fff;
+  }
 }

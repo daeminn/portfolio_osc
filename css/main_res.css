@@ -1,5 +1,6 @@
 /* 모바일만 ~767px */
 @media screen and (max-width: 767px) {
+  #fp-nav.fp-right {right: 15px;}
   .sec00 {
     background-image: unset;
   }

@@ -362,51 +362,57 @@
 }
 
 /* 풀페이지 네비게이션 */
-#fp-nav ul li {
-   margin: 30px;
-}
-#fp-nav ul li .fp-tooltip {
-   top:-5px; 
-   font-size: 20px;
-}
-#fp-nav ul li:hover a span:hover {
-   margin-left: -4px;
-}
-#fp-nav ul li:hover a span {
-   width: 16px;
-   height: 16px;
-   margin: -6px 0 0 -4px;
-}
-#fp-nav ul li .fp-tooltip.fp-right {
-   right: 30px;
-}
-#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span {
-   height: 18px;
-   width: 18px;
-   margin: -6px 0 0 -5px;
-}
-#fp-nav ul li a span {
-   background-color: #fff;
-   width: 10px; height: 10px;
-}
-#fp-nav ul li a.active span {
-   width: 20px; height: 20px;
-   margin: -6px 0 0 -7px;
-}
-#fp-nav ul li a.active span:hover {
-   width: 18px; height: 18px;
-}
+#fp-nav {z-index: 0;}
 #fp-nav li:last-child {
    display: none;
 }
+#fp-nav ul li {margin: 0; height: 50px;}
+#fp-nav ul li a span {
+   background-color: #fff;
+   width: 5px; height: 5px;
+   transition: 0.3s;
+   border: 1px solid #fff;
+}
+#fp-nav ul li .fp-tooltip {top: 14px;}
 #osc-main.fp-viewing-2 #fp-nav ul li a span,
-#osc-main.fp-viewing-3 #fp-nav ul li a span {
+#osc-main.fp-viewing-2 #fp-nav ul li a::before,
+#osc-main.fp-viewing-2 #fp-nav ul li a::after {
    background-color: rgba(0,0,0,0.7);
 }
-#osc-main.fp-viewing-2 #fp-nav ul li .fp-tooltip,
-#osc-main.fp-viewing-3 #fp-nav ul li .fp-tooltip {
-   color: rgba(0,0,0,0.7);;
+#fp-nav ul li:first-child a::before,
+#fp-nav ul li:nth-last-child(2) a:after {display: none;}
+#osc-main.fp-viewing-2 #fp-nav ul li .fp-tooltip{
+   color: rgba(0,0,0,0.7);
 }
+#fp-nav.fp-right {right:35px; transition: 0.5s;}
+#osc-main.fp-viewing-3 #fp-nav { display: none;}
+
+/* 네비디자인 */
+
+#fp-nav ul li a:before {
+   position: absolute;
+   left: 6.5px;
+   top: 0;
+   width: 1px;
+   height: 50%;
+   background-color: #fff;
+   transition: height 0.4s;
+   content: "";
+}
+#fp-nav ul li a::after {
+   content: "";
+   width: 1px;
+   height: 50%;
+   background-color: #fff;
+   position: absolute;
+   left: 6.5px;
+   top: 50%;
+   transition: height 0.4s;
+}
+#osc-main.fp-viewing-2 #fp-nav ul li a span {border-color: #000;;}
+#osc-main.fp-viewing-2 #fp-nav ul li a.active span, #osc-main.fp-viewing-2 #fp-nav ul li:hover a.active span {border:1px solid #000; background: #fff;}
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span {background-color: #000; transform: scale(1.2);}
+
 /* 구글아이콘 */
 .dev-list .material-symbols-outlined,
 .bsn-list .material-symbols-outlined {
