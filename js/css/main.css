@@ -1,0 +1,422 @@
+#osc-main {
+   position: relative;
+   width: 100%;
+}
+.section {
+   width: 100%;
+   height: 100%;
+   background-size: 100% 100%
+}
+
+/* section00 */
+
+.sec00 {
+   background-repeat: no-repeat;
+   background-image: url('../images/main1A.jpg');
+   color: #fff;
+}
+/* .sec-intro>.mask::after{
+   display: block;
+   width: 100%;
+   height: 100%;
+   background: #000;
+   content: '';
+   opacity: 0.3;
+   z-index: 0;
+} */
+.intro-wrap {
+   position: absolute;
+   top: 30%;
+   left: 10%;
+   display: inline-block;
+   background:rgba(0,0,0,0.5);
+   padding: 50px;
+   z-index: 1;
+   white-space: nowrap;
+   opacity: 0;
+   transition: 0.5s;
+   overflow: hidden;
+   transform: scaleX(0);
+}
+@keyframes intro-typing {
+   from {width: 0;}
+   to {width: 100%;}
+}
+
+#osc-main.fp-viewing-0 .intro-title-wrap {   
+   overflow: hidden;
+   animation: intro-typing 0.6s linear 0.3s both;
+}
+#osc-main.fp-viewing-0 .intro-wrap {
+   opacity: 1;
+   transform: scaleX(1);
+}
+.intro-title {
+   display: block;
+   font-size: 3em;
+   cursor: pointer;
+   z-index: 1;
+   padding-bottom: 10px;
+}
+.intro-title2 {
+   padding-top: 40px;
+}
+.intro-text {
+   word-break: keep-all;
+}
+
+.more {
+   position: absolute;
+   top:0;
+   right:0;
+   display: inline-block;
+   padding: 30px 40px;
+   color: #fff;
+   font-size: 1.2em;
+}
+.more::before {   
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   display: block;
+   content: '';
+   width: 0;
+   height: 100%;
+   background:#0a58ca;
+   transition: 0.3s;
+   transform: scaleX(0);
+   transform-origin: left;
+   z-index: -1;
+}
+.more:hover::before{
+   width: 100%;
+   transform: scaleX(1);
+}
+
+/* section01 */
+.sec01 {   
+   position: relative;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+.sec01-box {
+   display: table;
+   width: 100%;
+   height: 100%;
+}
+.dev-bg:after,.bsn-bg:after {
+   position: absolute;
+   display: block;
+   content: '';
+   background: rgba(0,0,0,0.5);
+   width: 100%;
+   height: 100%;
+   opacity: 0.5;
+   transition: 0.5s;
+}
+.develop, .business {
+   display: table-cell;
+   top: 0;
+   width: 50%;
+   transition:ease-in-out 0.3s;
+}
+.develop {left: 0;}
+.business {right: 0;}
+
+
+.dev-bg, .bsn-bg {
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+.dev-bg {
+   background-image: url('../images/main2A.jpg');
+}
+.bsn-bg {   
+   background-image: url('../images/main2B.jpg');
+}
+
+.develop:hover .dev-bg:after{background: rgba(0,0,0,0.4);}
+.business:hover .bsn-bg:after {background: rgba(0,0,0,0.2);}
+.develop:hover .dev-list,
+.business:hover .bsn-list {
+   opacity: 1;
+}
+
+.sec01-box h2 {
+   color: #fff;
+   font-size: 3em;
+}
+.dev-tit, .bsn-tit {
+   position: absolute;
+}
+.dev-tit {
+   top: 200px;
+   left: 50px;
+}
+.bsn-tit {
+   bottom: 100px;
+   right: 50px;
+}
+.dev-list, .bsn-list {
+   position: absolute;
+   color: #fff;
+   font-size: 1.2em;
+   line-height: 2.5;
+   width: 25%;
+}
+
+.dev-list>li:after, .bsn-list-title:after, .bsn-list>li>a:after, .bsn-list ul a::after {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 1px;
+   display: block;
+   content: '';
+   background: #fff;
+   transform: scaleX(0);
+   transform-origin: left;
+   transition: 0.3s;
+}
+.dev-list>li:hover:after, .bsn-list>li>a:hover:after, .bsn-list ul a:hover:after {transform: scaleX(1);}
+.dev-list>li a, .bsn-list>li>a, .bsn-list ul a {transition: 0.3s;}
+.dev-list>li a:hover, .bsn-list>li>a:hover, .bsn-list ul a:hover {color: #fff;}
+
+.dev-list {
+   bottom: 15%;
+   left: 50px;
+}
+.bsn-list {
+   top: 12%;
+   right: 50px;
+}
+.dev-list, .bsn-list {
+   opacity: 0;
+   transition: 0.3s;
+}
+.dev-list li {
+   position: relative;
+}
+.dev-list a, .bsn-list ul a  {
+   color: #eee;
+   display: block;
+   width: 100%;
+   height: 100%;
+   border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+.bsn-list li {
+   position: relative;
+}
+.bsn-list-title {
+   color: #dedede;
+   margin-top: 30px;
+}
+
+/* section02 */
+.sec02 {}
+.news-wrap {
+   position: relative;
+   width: 100%;
+   height: 100%;
+}
+
+.news-tit {
+   position: relative;
+   left: 5%;
+   top: 30%;
+   height: 100%;
+   white-space: nowrap;
+   overflow: hidden;
+}
+
+#osc-main.fp-viewing-2 .news-tit  {
+   animation:
+      typing 1.2s linear 0.2s both;
+}
+@keyframes typing {
+   from { width: 0;}
+   to { width: 35%;}
+}
+
+.news-tit h2 {
+   position: absolute;
+   font-size: 3em;
+   height: 1.5em;
+}
+.news-tit p {
+   position: absolute;
+   top: 6%;
+   display: -webkit-box;
+   overflow: hidden;
+   -webkit-line-clamp:1;
+   text-overflow: ellipsis;
+   font-size: 1.3em;
+   font-weight: 500;
+   z-index: 1;
+}
+.news-tit>.more {
+   top: 15%;
+   right: inherit;
+   font-weight: 600;
+   color: #fff;
+   padding: 20px 40px;
+   transition: 0.3s;
+   z-index: 1;
+}
+.news-tit>.more:hover {color: #fff;}
+.news-tit>.more::before {width: 100%; transform: scaleX(1);}
+.news-tit>.more:hover::before {
+   border-radius: 60px 0 60px 0;
+}
+.news-bg {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background: url('../images/main3.jpg') 100% 100% / cover no-repeat;
+   opacity: 0.6;
+}
+.news-box {
+   position: absolute;
+   top: 28%;
+   left: 35%;
+   width: 65%;
+   overflow: hidden;
+   transition: 0.4s;
+}
+#osc-main.fp-viewing-2 .news-title {
+   animation: intro-typing 0.5s linear 0.2s both;
+}
+@keyframes news-typing {
+   from {opacity: 0; width: 33%;}
+   to {opacity: 1; width: 100%;}
+}
+@keyframes news-box {
+   from {opacity: 0;}
+   to { opacity: 1;}
+}
+#osc-main.fp-viewing-2 .news-box {
+   animation: news-box 0.5s linear 0.2s both;
+}
+#osc-main.fp-viewing-2 .news-li-tit,
+#osc-main.fp-viewing-2 .news-txt,
+#osc-main.fp-viewing-2 .news-date {
+   animation: news-typing 0.5s linear 0.2s both;
+}
+.news-li {
+   position: relative;
+   float: left;
+   width: 30%;
+   outline: 1px solid rgba(0,0,0,0.1);
+   padding: 20px;
+   backdrop-filter: blur(5px);
+   background: rgba(255,255,255,0.5);
+   transition: 0.3s;
+
+}
+.news-li:after {
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;
+   width: 100%;
+   height: 100%;
+   transform: scale(0,1);
+   transform-origin: bottom;
+   transition: 0.5s;
+   content: '';
+   z-index: -1;
+}
+.news-li:hover::after {
+   transform: scale(1);
+   background: rgb(10, 88, 202,0.7);
+}
+.news-li:hover { color: #fff;}
+.news-li-tit {
+   font-size: 1.5em;
+   font-weight: 500;
+   display: -webkit-box;
+   width: 100%;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+}
+.news-txt {
+   display: -webkit-box;
+   width: 100%;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   margin: 10px 0;
+}
+.news-date {
+   font-size: 0.9em;
+   opacity: 1;
+   transition: 0.5s;
+   overflow: hidden;
+}
+
+/* 풀페이지 네비게이션 */
+#fp-nav {z-index: 0;}
+#fp-nav li:last-child {
+   display: none;
+}
+#fp-nav ul li {margin: 0; height: 50px;}
+#fp-nav ul li a span {
+   background-color: #fff;
+   width: 5px; height: 5px;
+   transition: 0.3s;
+   border: 1px solid #fff;
+}
+#fp-nav ul li .fp-tooltip {top: 14px;}
+#osc-main.fp-viewing-2 #fp-nav ul li a span,
+#osc-main.fp-viewing-2 #fp-nav ul li a::before,
+#osc-main.fp-viewing-2 #fp-nav ul li a::after {
+   background-color: rgba(0,0,0,0.7);
+}
+#fp-nav ul li:first-child a::before,
+#fp-nav ul li:nth-last-child(2) a:after {display: none;}
+#osc-main.fp-viewing-2 #fp-nav ul li .fp-tooltip{
+   color: rgba(0,0,0,0.7);
+}
+#fp-nav.fp-right {right:35px; transition: 0.5s;}
+#osc-main.fp-viewing-3 #fp-nav { display: none;}
+
+/* 네비디자인 */
+
+#fp-nav ul li a:before {
+   position: absolute;
+   left: 6.5px;
+   top: 0;
+   width: 1px;
+   height: 50%;
+   background-color: #fff;
+   transition: height 0.4s;
+   content: "";
+}
+#fp-nav ul li a::after {
+   content: "";
+   width: 1px;
+   height: 50%;
+   background-color: #fff;
+   position: absolute;
+   left: 6.5px;
+   top: 50%;
+   transition: height 0.4s;
+}
+#osc-main.fp-viewing-2 #fp-nav ul li a span {border-color: #000;;}
+#osc-main.fp-viewing-2 #fp-nav ul li a.active span, #osc-main.fp-viewing-2 #fp-nav ul li:hover a.active span {border:1px solid #000; background: #fff;}
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span {background-color: #000; transform: scale(1.2);}
+
+/* 구글아이콘 */
+.dev-list .material-symbols-outlined,
+.bsn-list .material-symbols-outlined {
+   position: absolute;
+   left: 93%;
+   top: 0.65em;
+}
