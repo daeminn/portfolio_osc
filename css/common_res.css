@@ -30,8 +30,8 @@
    .profile {position: relative; display: block; color: #fff; text-align: center; padding: 60px 0 40px;}
    .profile h2 {
       position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     font-size: 2.5em;
     line-height: 1.4;
    }
@@ -85,7 +85,7 @@
    }
    .ft-info-wrap {
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
    }
    .ft-logo a{height: 100%;}
    .ft-info {margin: auto 50px;}
@@ -163,11 +163,10 @@
 }
    #osc-main.fp-viewing-1 #osc-hd,
    #osc-main.fp-viewing-2 #osc-hd,
-   #osc-main.fp-viewing-3 #osc-hd{
-      background: rgba(0,0,0,0.5);
+   #osc-main.fp-viewing-3 #osc-hd,
+   #osc-main.fp-viewing-4 #osc-hd{
+      background: rgba(0,0,0,0.7);
       backdrop-filter: blur(10px);
-   }
-   #osc-main.fp-viewing-2 #osc-hd {
    }
    .gnb-open, .gnb-close {
       display: none;
@@ -183,9 +182,7 @@
       transition: 0.3s;
    }
    
-   .all-menu-open:hover{
-      color: #f00;
-   }
+  
    .all-menu-close {
       position: absolute;
       top: 30px;
@@ -320,7 +317,6 @@
       height: 100%;
       align-items: center;
       transition: 0.3s;
-      outline: 1px solid rgba(255, 255, 255, 0.3);
    }
    .osc-logo {      
       position: relative;
@@ -341,11 +337,13 @@
    }
    #osc-gnb {
       position: relative;
-      left: 150px;
+      left: 0;
       display: flex;
+      align-items: center;
       width: 100%;
       height: 100px;
-      align-items: center;
+      padding-left: 15%;
+      outline: 1px solid rgba(0, 0, 0, 0.1);
    }
    .osc-logo a, .lang {
       transition: 0.5s;
@@ -387,12 +385,7 @@
    .depth1 > li > a {
       width: 100%;
       font-size: 1.1em;
-   }
-   .depth1 a {
-      width: 100%;
-   }
-   .depth2 {
-      transition: 0.5s;
+      font-weight: 500;
    }
    .depth2 a {
       font-size: 0.9em;
@@ -400,42 +393,31 @@
       opacity: 0;
       color: rgba(255,255,255,0.8);
       overflow: hidden;
+      transition: 0.3s;
    }
-   #osc-hd.active {
-      
-   }
+   .depth2 a:hover { padding-left: 20px; font-weight: 600;}
+   #osc-hd.active {}
    .gnb-wrap.color {
-      background-color: rgba(0,0,0,0.5);
+      background-color: #fff;
    }
-   #osc-hd.active .hd-wrap {
-      outline-color: rgba(255,255,255,0.9);
-   }
-   #osc-hd.active .depth2 a:hover {
-      color: rgba(255,255,255,1);
-      font-weight: 500;
+   #osc-hd:hover .osc-logo a, #osc-hd.active .osc-logo a {background-image: url('../images/logo.png');}
+   #osc-hd:hover .depth1 a, #osc-hd.active .depth1 a, #osc-hd:hover .all-menu-open {color: #000;}
+   #osc-hd:hover .all-menu-open:hover{
+      color: #f00;
    }
    #osc-hd.active .gnb-wrap {
       height: 500px;
-   }
-   #osc-hd.active .depth1 {
+      outline: 1px solid rgba(0,0,0,0.1);
    }
    #osc-hd.active .depth2 a{
       line-height: 3.5;
       opacity: 1;
    }
-   #osc-hd.active .lang {
-   }
-   #osc-hd.active .lang:hover {
-      color: #f00;
-   }
    .attr-nav {   
-      top: 0;
       font-size: 1.1em;
       line-height: 5;
       display: none;
    }
-   .lang {color: #fff}
-
 }
 
 /* 작은 PC 1024px~1279px */
@@ -448,7 +430,7 @@
       width: 200px;
    }
    #osc-gnb {
-      left: 15%;
+      padding-left: 15%;
    }
    .depth1 {width: 70%;}
    .depth2 a {
@@ -456,8 +438,8 @@
    }   
    .attr-nav {   
       display: block;
-      right: 5%;
-      line-height: 5;
+      right: 5%;      
+      top: 3px;
    }
    
    .lang {color: #ededed;}
@@ -473,8 +455,8 @@
   .login-form {
    position: fixed;
    top: 100px;
-   right: -300px;
-   padding: 100px 50px;
+   right: -20%;
+   display: block;
    z-index: 10;
    background-color: #fff;
   }

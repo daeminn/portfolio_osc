@@ -4,7 +4,7 @@ $(function(){
   let ftEl = $("#osc-ft").clone().addClass("section fp-auto-height");;
   fpCon.append(ftEl);
   fpCon.fullpage({
-    navigationTooltips: ['01','02','03'],
+    navigationTooltips: ['01','02','03','04'],
     navigation: true,
     navigationPosition: 'right',
     scrollingSpeed: 1000,

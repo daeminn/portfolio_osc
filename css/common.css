@@ -2,7 +2,7 @@
 @import url('reset.css');
 @import url('fonts.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
-
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0');
 /* 스킵 */
 #skip {
    position: fixed;
@@ -185,5 +185,6 @@
 .sub-copyright{
    text-align: center;
    padding: 0 30px;
-   font-size: 12px;
+   font-size: 16px;
 }
+.login-form {display: none;}

@@ -31,12 +31,13 @@ $(window).ready(function () {
          body.addClass("tb").removeClass("mo pc");
          $(".section").removeClass("fp-auto-height");
          $("#osc-ft").addClass("fp-auto-height");
-         $(".develop, .business").css("width","50%")
+         $(".develop, .business").css("width","50%");
       } else {
          body.addClass("pc").removeClass("mo tb");
          $(".section").removeClass("fp-auto-height");
          $("#osc-ft").addClass("fp-auto-height");
-         $(".develop, .business").css("width","50%")
+         $(".develop, .business").css("width","50%");         
+         $(".depth2").show();
       }
    }  
 
