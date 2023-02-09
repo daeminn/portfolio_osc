@@ -1,7 +1,6 @@
 $(function(){
   const body = $("body");
-  const hd = $('#osc-hd');   
-  let gnbWrap = $('.gnb-wrap');
+  const hd = $('#osc-hd');
   const fpCon = $("#osc-main-container");
   let ftEl = $("#osc-ft").clone().addClass("section fp-auto-height");;
   fpCon.append(ftEl);
@@ -46,24 +45,19 @@ $(function(){
    }  
 
   
-  //PC GNB 활성화
-   hd.on({
+  //풀페이지 네비게이션 show/hide
+  hd.on({
       "mouseenter": function () {
          if (body.hasClass("pc") || body.hasClass("tb")) {
-            hd.addClass("active");
             $('#fp-nav').css("opacity","0");
          }
-      }
-   });
-   //PC GNB 비활성화
-   hd.on({
+      },
       "mouseleave": function () {
          if (body.hasClass("pc") || body.hasClass("tb")) {
-            hd.removeClass("active");
             $('#fp-nav').css("opacity","1");
          }
       }
-   })
+   });
   //메인화면 sec01 table-cell 이벤트
   $(".develop, .business").on({
     "mouseenter": function(){

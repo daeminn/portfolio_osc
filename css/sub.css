@@ -3,7 +3,6 @@ html {font-size: 10px;}
 .all-menu-open {display: none;}
 #osc-hd {
   position: absolute;
-  background-color: #fff;
   z-index: 101;
 }
 .osc-logo a {background-image: url('../images/logo.png');}
@@ -19,7 +18,7 @@ html {font-size: 10px;}
   z-index: 100;
 }
 .hd-wrap a {color: #fff;}
-.gnb-wrap.color, #osc-hd.active .gnb-wrap {background-color: #fff;}
+.gnb-wrap.color, #osc-hd.active .gnb-wrap {}
 
 .hgroup-wrap {
   display: table;
@@ -215,9 +214,9 @@ html {font-size: 10px;}
     height: 5.4rem;
   }
 }
-/* 작은 PC */
+/* 작은 PC부터 */
 @media screen and (min-width: 1024px) {
-  .hd-wrap a {color: #000;}
+  #osc-hd {backdrop-filter: blur(5px);}
   .gnb-wrap {top: 0; height: 100px;}
   #osc-sub-hd, #osc-ft { padding-left: 0;}
   #osc-main-container {
@@ -255,8 +254,16 @@ html {font-size: 10px;}
     left: 33rem;
   }
 }
-@media screen and (min-width: 1280px) {
+/* 작은 PC만 */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .osc-logo a {background-image: url('../images/logo_wh.png');}
   
+}
+/* PC 1280px~ */
+@media screen and (min-width: 1280px) {
+  #osc-hd.active .osc-logo a {
+    background-image: url(../images/logo_wh.png);
+  }  
   .osc-logo {left: 12%;}
   #osc-gnb, #osc-sub-hd, #osc-ft {padding-left: 25%;}
   .sub-bg-area {

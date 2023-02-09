@@ -202,7 +202,7 @@
       position: fixed;
       top: -100%;
       right: 0;
-      display: block;
+      display: none;
       width: 100vw;
       z-index: 9999;
       transition: 0.5s;
@@ -285,7 +285,7 @@
       justify-content: start;
       padding-left: 20%;
       width: 100%;
-      height: 100%;
+      color: #fff;
    }
    .dp2 a::before{
       position: absolute;
@@ -344,7 +344,7 @@
       transition: 0.5s;
    }
    .osc-logo a {
-      background: url('../images/logo_wh.png') center center / contain no-repeat;
+      background-image: url('../images/logo_wh.png');
    }
    
    .depth1 {
@@ -360,11 +360,11 @@
    }
   .depth1>li:after {
       position: absolute;
-      top: 98px;
+      top: 99px;
       display: block;
       content: '';
       width: 100%;
-      height: 2px;
+      height: 3px;
       background: #fff;
       transition: 0.3s;
       transform: scaleX(0);
@@ -390,19 +390,16 @@
       transition: 0.3s;
    }
    .depth2 a:hover { padding-left: 5px; font-weight: 600;}
-   .gnb-wrap.color {
-      background-color: #fff;
-   }
-   #osc-hd.active .osc-logo a, .gnb-wrap.color .osc-logo a {background-image: url('../images/logo.png');}
-   #osc-hd.active .depth1 a, #osc-hd:hover .all-menu-open {color: #000;}
 
    #osc-hd:hover .all-menu-open:hover{
       color: #f00;
    }
    #osc-hd.active .gnb-wrap {
       height: 500px;
-      outline: 1px solid rgba(0,0,0,0.1);
-      background-color: #fff;
+      background-color: #000;
+   }
+   #osc-hd.active #osc-gnb {
+      outline: 1px solid rgba(255,255,255,0.5);
    }
    #osc-hd.active .depth2 a{
       line-height: 3.5;
@@ -421,7 +418,8 @@
 
 /* PC 1280px~ */
 @media screen and (min-width: 1280px) {
-   
+   #all-menu {display: block;}
+   .gnb-wrap {top: 0; height: 100px;}
    #osc-gnb {
       padding-left: 15%;
    }
