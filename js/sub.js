@@ -10,7 +10,7 @@ $(function(){
     $(".desc-line, .lnb-depth2").css("background-color", bgColor[mainNum]);
 
     //2. 서브비주얼 이미지 출력
-    let subHdBgImg = "url('../images/sub/sub_visual_0" + mainNum + ".jpg')";
+    let subHdBgImg = "url('./images/sub/sub_visual_0" + mainNum + ".jpg')";
     $(".hgroup").css("background-image", subHdBgImg);
     
     //메인메뉴 레이블
