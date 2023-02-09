@@ -1,5 +1,7 @@
 $(function(){
-
+  const body = $("body");
+  const hd = $('#osc-hd');   
+  let gnbWrap = $('.gnb-wrap');
   const fpCon = $("#osc-main-container");
   let ftEl = $("#osc-ft").clone().addClass("section fp-auto-height");;
   fpCon.append(ftEl);
@@ -14,76 +16,68 @@ $(function(){
 
    });
 
-   // rwd();
+   rwd();
 
-   // $(window).resize(function () {
-   //    rwd();
-   // });
+   $(window).resize(function () {
+      rwd();
+   });
 
-   // function rwd() {
-   //    wW = window.innerWidth;
-   //    wH = window.innerHeight;
-   //    if (wW < 768) {
-   //       body.addClass("mo").removeClass("tb pc");
-   //       $(".depth2").stop().slideUp();
-   //       $(".section").addClass("fp-auto-height");
-   //       $(".develop, .business").css("width","inherit")
-         
-   //    } else if (wW >= 768 && wW < 1024) {
-   //       body.addClass("tb").removeClass("mo pc");
-   //       $(".section").removeClass("fp-auto-height");
-   //       $("#osc-ft").addClass("fp-auto-height");
-   //       $(".develop, .business").css("width","50%")
-   //    } else {
-   //       body.addClass("pc").removeClass("mo tb");
-   //       $(".section").removeClass("fp-auto-height");
-   //       $("#osc-ft").addClass("fp-auto-height");
-   //       $(".develop, .business").css("width","50%")
-   //    }
-   // }
-
-   
-   // let develop = $('.develop');
-   // let business = $('.business');
-   // let sec01Box = $('.sec01-box');
-   // /* table cell 마우스엔터 */
-
-   // $(".develop, .business").on({
-   //    "mouseenter": function(){
-   //       if(body.hasClass("pc") || body.hasClass("tb")){
-   //          $(this).css("width","70%");
-   //          $(this).siblings().css("width","30%");
-   //       }
-   //    },
-   //    "mouseleave": function(){
-   //       if(body.hasClass("pc") || body.hasClass("tb")){
-   //          $(this).css("width","50%");
-   //          $(this).siblings().css("width","50%");
-   //       }
-   //    }
-   // })
-   // $('.sec01-box').on({
-   //    "mouseleave": function(){
-   //       if(body.hasClass("pc") || body.hasClass("tb")){
-   //          develop.css("width","50%");
-   //          business.css("width","50%");
-   //       }
-   //    }
-   // })
-   
-   // function section01(){
+   function rwd() {
+    wW = window.innerWidth;
+    wH = window.innerHeight;
+    if (wW < 768) {
+       body.addClass("mo").removeClass("tb pc");
+       $(".depth2").stop().slideUp();
+       $(".section").addClass("fp-auto-height");
+       $(".develop, .business").css("width","inherit")      
     
-   //  develop.mouseenter(function(){
-   //    $(this).css("width","70%");
-   //    business.css("width","30%");
-   //  })
-   //  business.mouseenter(function(){
-   //    $(this).css("width","70%");
-   //    develop.css("width","30%");
-   //  })
-   //  sec01Box.mouseleave(function(){
-   //    develop.css("width","50%");
-   //    business.css("width","50%");
-   //  })
-   // }
- });
+    } else if (wW >= 768 && wW < 1024) {
+       body.addClass("tb").removeClass("mo pc");
+       $(".section").removeClass("fp-auto-height");
+       $("#osc-ft").addClass("fp-auto-height");
+       $(".develop, .business").css("width","50%");
+    } else {
+       body.addClass("pc").removeClass("mo tb");
+       $(".section").removeClass("fp-auto-height");
+       $("#osc-ft").addClass("fp-auto-height");
+       $(".develop, .business").css("width","50%");         
+       $(".depth2").show();
+    }
+   }  
+
+  
+  //PC GNB 활성화
+   hd.on({
+      "mouseenter": function () {
+         if (body.hasClass("pc") || body.hasClass("tb")) {
+            hd.addClass("active");
+            $('#fp-nav').css("opacity","0");
+         }
+      }
+   });
+   //PC GNB 비활성화
+   hd.on({
+      "mouseleave": function () {
+         if (body.hasClass("pc") || body.hasClass("tb")) {
+            hd.removeClass("active");
+            $('#fp-nav').css("opacity","1");
+         }
+      }
+   })
+  //메인화면 sec01 table-cell 이벤트
+  $(".develop, .business").on({
+    "mouseenter": function(){
+      if(body.hasClass("pc") || body.hasClass("tb")){
+          $(this).css("width","70%");
+          $(this).siblings().css("width","30%");
+      }
+    },
+    "mouseleave": function(){
+      if(body.hasClass("pc") || body.hasClass("tb")){
+          $(this).css("width","50%");
+          $(this).siblings().css("width","50%");
+      }
+   }
+})
+
+});

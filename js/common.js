@@ -23,20 +23,11 @@ $(window).ready(function () {
       wH = window.innerHeight;
       if (wW < 768) {
          body.addClass("mo").removeClass("tb pc");
-         $(".depth2").stop().slideUp();
-         $(".section").addClass("fp-auto-height");
-         $(".develop, .business").css("width","inherit")      
-      
+         $(".depth2").stop().slideUp();      
       } else if (wW >= 768 && wW < 1024) {
          body.addClass("tb").removeClass("mo pc");
-         $(".section").removeClass("fp-auto-height");
-         $("#osc-ft").addClass("fp-auto-height");
-         $(".develop, .business").css("width","50%");
       } else {
          body.addClass("pc").removeClass("mo tb");
-         $(".section").removeClass("fp-auto-height");
-         $("#osc-ft").addClass("fp-auto-height");
-         $(".develop, .business").css("width","50%");         
          $(".depth2").show();
       }
    }  
@@ -52,53 +43,24 @@ $(window).ready(function () {
    });
 
 
-   //헤더 컬러변경
-   hd.on({
-      "mouseenter": function(){
-         if (body.hasClass("pc") || body.hasClass("tb")){
-            gnbWrap.addClass("color");
-         }
-      },
-      "mouseleave": function(){
-         if (body.hasClass("pc") || body.hasClass("tb")){
-            gnbWrap.removeClass("color");
-         }
-      }
-   })
    
    //PC GNB 활성화
-   depth1.on({
+   hd.on({
       "mouseenter": function () {
-         if (body.hasClass("pc") || body.hasClass("tb")) {
+         if (body.hasClass("pc")) {
             hd.addClass("active");
-            $('#fp-nav').css("opacity","0");
          }
       }
    });
    //PC GNB 비활성화
    hd.on({
       "mouseleave": function () {
-         if (body.hasClass("pc") || body.hasClass("tb")) {
+         if (body.hasClass("pc")) {
             hd.removeClass("active");
-            $('#fp-nav').css("opacity","1");
          }
       }
    })
-   //메인화면 sec01 table-cell 이벤트
-   $(".develop, .business").on({
-      "mouseenter": function(){
-         if(body.hasClass("pc") || body.hasClass("tb")){
-            $(this).css("width","70%");
-            $(this).siblings().css("width","30%");
-         }
-      },
-      "mouseleave": function(){
-         if(body.hasClass("pc") || body.hasClass("tb")){
-            $(this).css("width","50%");
-            $(this).siblings().css("width","50%");
-         }
-      }
-   })
+  
 
    //모바일 GNB 열기
    gnbOpener.on({

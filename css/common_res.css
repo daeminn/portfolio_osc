@@ -321,23 +321,18 @@
    .osc-logo {      
       position: relative;
       left: 8%;
-      width: 180px;
-      height: 100%;
       display: block;    
       z-index: 1;
 
    }
    .gnb-wrap{
       top: 0;
-      display: flex;      
-      width: 100%;
-      height: 100%;
+      display: flex;    
       transition: 0.3s;
       background: transparent;
    }
    #osc-gnb {
       position: relative;
-      left: 0;
       display: flex;
       align-items: center;
       width: 100%;
@@ -349,7 +344,6 @@
       transition: 0.5s;
    }
    .osc-logo a {
-      height: 100px;
       background: url('../images/logo_wh.png') center center / contain no-repeat;
    }
    
@@ -395,19 +389,20 @@
       overflow: hidden;
       transition: 0.3s;
    }
-   .depth2 a:hover { padding-left: 20px; font-weight: 600;}
-   #osc-hd.active {}
+   .depth2 a:hover { padding-left: 5px; font-weight: 600;}
    .gnb-wrap.color {
       background-color: #fff;
    }
-   #osc-hd:hover .osc-logo a, #osc-hd.active .osc-logo a {background-image: url('../images/logo.png');}
-   #osc-hd:hover .depth1 a, #osc-hd.active .depth1 a, #osc-hd:hover .all-menu-open {color: #000;}
+   #osc-hd.active .osc-logo a, .gnb-wrap.color .osc-logo a {background-image: url('../images/logo.png');}
+   #osc-hd.active .depth1 a, #osc-hd:hover .all-menu-open {color: #000;}
+
    #osc-hd:hover .all-menu-open:hover{
       color: #f00;
    }
    #osc-hd.active .gnb-wrap {
       height: 500px;
       outline: 1px solid rgba(0,0,0,0.1);
+      background-color: #fff;
    }
    #osc-hd.active .depth2 a{
       line-height: 3.5;
@@ -426,9 +421,7 @@
 
 /* PC 1280px~ */
 @media screen and (min-width: 1280px) {
-   .osc-logo {
-      width: 200px;
-   }
+   
    #osc-gnb {
       padding-left: 15%;
    }
