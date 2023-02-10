@@ -3,7 +3,6 @@ html {font-size: 10px;}
 .all-menu-open {display: none;}
 #osc-hd {
   position: absolute;
-  z-index: 101;
 }
 .osc-logo a {background-image: url('../images/logo.png');}
 .gnb-wrap {top:-100vh; height: 100vh;}
@@ -30,13 +29,13 @@ html {font-size: 10px;}
   width: 100%;
   height: 400px;
   padding-top: 100px;
-  background: url("") center /cover no-repeat;
+  background: center /cover no-repeat;
   color: #fff;
   vertical-align: middle;
   text-align: center;
 }
 .sub-h2 {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .sub-h2-desc {
@@ -103,9 +102,9 @@ html {font-size: 10px;}
   width: 50%;
   height: 4.5rem;
   overflow: hidden;
+  transition: 0.3s;
 }
 .lnb.active {
-  height: auto;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
@@ -214,9 +213,9 @@ html {font-size: 10px;}
     height: 5.4rem;
   }
 }
-/* 작은 PC부터 */
+/* 작은 PC */
 @media screen and (min-width: 1024px) {
-  #osc-hd {backdrop-filter: blur(5px);}
+  #osc-hd {backdrop-filter: blur(3px);}
   .gnb-wrap {top: 0; height: 100px;}
   #osc-sub-hd, #osc-ft { padding-left: 0;}
   #osc-main-container {

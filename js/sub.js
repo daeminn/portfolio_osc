@@ -17,14 +17,14 @@ $(function(){
     let main = ["회사소개","신약개발","의료사업","기능소재", "투자정보", "인재채용", "준법경영"];
     //서브메뉴 레이블
     let sub = [];
-    sub[0] = "About Us|회사연혁|Contact Us";
+    sub[0] = "오스코텍 소개|회사연혁|Contact Us";
     sub[1] = "신약개발개요|류마티스 관절염|면역혈소판 감소증|급성골수성 백혈병|비소세포성폐암|알츠하이머 치매";
     sub[2] = "치과용뼈이식재|치과용멤브레인";
     sub[3] = "건강식품소재|일반식품소재|Product";
     sub[4] = "공지사항|언론센터|IR Materials|Coverage Reports"
     sub[5] = "채용공고";
     sub[6] = "윤리강령|신고하기";
-    
+
     // 3. 반복문으로 각 배열 번지별로 저장된 문자 나눠서 서브배열 만들기
     for(let i = 0; i < sub.length; i++) {
         sub[i] = sub[i].split("|");
@@ -59,18 +59,33 @@ $(function(){
     $(".lnb-depth2").append("<li class=\"active\"><a href=\"#\">" + sub[mainNum][subNum] + "</a></li>");
     for(let k = 0; k < sub[mainNum].length; k++) {
         $(".lnb-depth2").append("<li><a href=\"" + subUrl[mainNum][k] +"\">" + sub[mainNum][k] + "</a></li>");
-    }
-
+    }    
     // 6. lnb 작동
-    $(".lnb").on({
+    let lnbHeight = $('.lnb>li').eq(1).height();
+    let subLength = sub[mainNum].length;
+    let mainLength = main.length;
+    let lnbFirstHeight = $('.lnb').height();
+    // console.log(lnbHeight);
+
+    $(".lnb").eq(0).on({
         "mouseenter focusin": function(){
-            $(this).addClass("active");
+            $(this).css("height", lnbHeight * mainLength + lnbFirstHeight);    
+            
         },
         "mouseleave focusout": function(){
-            $(this).removeClass("active");
+            $(this).css("height", $('#osc-lnb').height());  
         }
     });
-    
+    // console.log(lnbHeight * mainLength + lnbFirstHeight);
+    $(".lnb").eq(1).on({
+        "mouseenter focusin": function(){
+            $(this).css("height", lnbHeight * subLength + lnbFirstHeight);    
+            
+        },
+        "mouseleave focusout": function(){
+            $(this).css("height", $('#osc-lnb').height());  
+        }
+    });
     //7. 글자크기 확대/축소
     let fz = 10;
     let fzMax = 15;

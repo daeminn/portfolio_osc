@@ -26,7 +26,6 @@ $(function(){
     wH = window.innerHeight;
     if (wW < 768) {
        body.addClass("mo").removeClass("tb pc");
-       $(".depth2").stop().slideUp();
        $(".section").addClass("fp-auto-height");
        $(".develop, .business").css("width","inherit")      
     
@@ -40,7 +39,6 @@ $(function(){
        $(".section").removeClass("fp-auto-height");
        $("#osc-ft").addClass("fp-auto-height");
        $(".develop, .business").css("width","50%");         
-       $(".depth2").show();
     }
    }  
 

@@ -11,7 +11,8 @@ $(window).ready(function () {
    let menuPullDown = $('.all-menu-open');
    let menuCloser = $('.all-menu-close');
    let allMenu = $('#all-menu');
-
+   let depth2 = $(".depth2");
+   let lnb = $(".lnb");
    rwd();
 
    $(window).resize(function () {
@@ -23,12 +24,15 @@ $(window).ready(function () {
       wH = window.innerHeight;
       if (wW < 768) {
          body.addClass("mo").removeClass("tb pc");
-         $(".depth2").stop().slideUp();      
+         depth2.stop().slideUp();
+         lnb.css("height","inherit");
       } else if (wW >= 768 && wW < 1024) {
-         body.addClass("tb").removeClass("mo pc");
+         body.addClass("tb").removeClass("mo pc");         
+         depth2.stop().slideUp();      
+         lnb.css("height","inherit");
       } else {
          body.addClass("pc").removeClass("mo tb");
-         $(".depth2").show();
+         depth2.show();
       }
    }  
 
@@ -66,7 +70,7 @@ $(window).ready(function () {
    gnbOpener.on({
       "click": function () {
          if (body.hasClass("mo")||body.hasClass("tb")) {
-            gnbWrap.addClass("open");
+            gnbWrap.addClass("down");
          }
       }
    });
@@ -75,8 +79,8 @@ $(window).ready(function () {
    gnbCloser.on({
       "click": function () {
          if (body.hasClass("mo")||body.hasClass("tb")) { 
-            gnbWrap.removeClass("open")
-            $(".depth2").stop().slideUp();
+            gnbWrap.removeClass("down")
+            depth2.stop().slideUp();
          }
       }
    });
@@ -85,7 +89,7 @@ $(window).ready(function () {
    menuPullDown.on ({
       "click":function() {
          if (body.hasClass("pc")) {
-            allMenu.addClass("down");
+            allMenu.addClass("slide");
             $(this).fadeOut();
          }
       }
@@ -94,7 +98,7 @@ $(window).ready(function () {
    menuCloser.on ({
       "click":function() {
          if (body.hasClass("pc")) {
-            allMenu.removeClass("down");
+            allMenu.removeClass("slide");
             menuPullDown.fadeIn();
          }
       }

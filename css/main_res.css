@@ -83,6 +83,12 @@
 
 /* PC부터 1024px~ */
 @media screen and (min-width: 1024px) {
+  #osc-main.fp-viewing-1 #osc-hd,
+  #osc-main.fp-viewing-2 #osc-hd,
+  #osc-main.fp-viewing-3 #osc-hd,
+  #osc-main.fp-viewing-4 #osc-hd{
+    background: rgba(0,0,0,0.7);
+  }
 }
 
 /* 작은 PC 1024px~1279px */

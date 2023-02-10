@@ -1,84 +1,18 @@
    @charset 'UTF-8';
 /* 모바일만 ~767px */
 @media screen and (max-width: 767px) {
-   #osc-hd {
-      position: fixed;
-      width: 100%;
-      z-index: 100;
-   }
    .hd-wrap {
       display: flex;
-      align-items: center;
-      background: #fff;
+      align-items: center;      
       height: 60px;
    }
-   .gnb-wrap{
-      top: -100%;
-      height: 100%;
-      overflow: auto;
-      display: flex;
-      flex-direction: column;
-      z-index: 1;
-   }
-   .gnb-wrap.open {
-      top: 0;
-   }
-   .lang{display: none;}
-
-   .all-menu-open:hover{
-   }
-   .profile {position: relative; display: block; color: #fff; text-align: center; padding: 60px 0 40px;}
-   .profile h2 {
-      position: relative;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    font-size: 2.5em;
-    line-height: 1.4;
-   }
-   .profile h2:after {
-   content: '';
-   position: absolute;
-   display: block;
-   left: 50%;
-   bottom: 0;
-   width: 50px;
-   height: 1px;
-   background-color: #fff;   transform: translateX(-50%);
-
-   }
-   .profile h5 {
-      font-size:1.1em;
-   }
-   #osc-gnb {
-      position: relative;
-      width: 100%;
-   }
-   .depth1>li>a{
-      line-height: 4;
-      font-size: 1.3em;
-   }
-   .depth2 {
-      width: 100%;;
-      background: #999;
-      display: none;
-   }
-   .depth2 {
-      font-size: 1.1em;
-      line-height: 2.5;
-   }
-
    .ft-logo a {display: none;}
-   .ft-wrap {
-      margin: 0 auto;
-      text-align: center;
-   }
-   .ft-info-wrap {}
-   .ft-info h4 {}
+   .ft-info-wrap {text-align: center;}
+   .sub-copyright {font-size: 14px;}
 }
 
 /* 태블릿부터 768px~ */
 @media screen and (min-width: 768px) {
-   
    .ft-wrap {
       display: flex;
       flex-direction: column;
@@ -100,97 +34,163 @@
       background: #fff;
       height: 60px;
    }
-   .gnb-wrap{
-      top: -100%;
-      height: 100%;
-      overflow: auto;
-      display: flex;
-      flex-direction: column;
-      z-index: 1;
-   }
-   .gnb-wrap.open {
-      top: 0;
-   }
-   .lang:hover {
-      color: #f00;
-   }
-   .profile {position: relative; display: block; color: #fff; text-align: center; padding: 60px;}
-   .profile h2 {
-      position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    font-size: 2.5em;
-    line-height: 1.4;
-   }
-   .profile h2:after {
-   content: '';
-   position: absolute;
-   display: block;
-   left: 50%;
-   bottom: 0;
-   width: 60px;
-   height: 1px;
-   background-color: #fff;   
-   transform: translateX(-50%);
-
-   }
-   .profile h5 {
-      font-size:1.5em;
-   }
+   .profile h2:after {width: 70px;}
+   .profile div {font-size:1.5em;}
    #osc-gnb {
       position: relative;
       width: 100%;
    }
-   .depth1>li>a{
-      line-height: 4;
-      font-size: 1.3em;
-   }
-   .depth2 {
-      width: 100%;;
-      background: #999;
-      display: none;
-      
-      font-size: 1.1em;
-      line-height: 2.5;
-   }
+   .ft-info {margin: auto 30px;}
+   .customer-info {margin-right: 50px;}
 }
 
 /* PC부터 1024px~ */
 
 @media screen and (min-width: 1024px) {
-   .profile {
-   display: none;
-}
-   #osc-main.fp-viewing-1 #osc-hd,
-   #osc-main.fp-viewing-2 #osc-hd,
-   #osc-main.fp-viewing-3 #osc-hd,
-   #osc-main.fp-viewing-4 #osc-hd{
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(10px);
-   }
-   .gnb-open, .gnb-close {
+   .profile, .gnb-open, .gnb-close {
       display: none;
    }
-   .all-menu-open{
-      position: absolute;
-      top: 5px;
-      right: 30px;
-      display: block;
-      color: #fff;
-      line-height: 4.8;
-      font-size: 1.1em;
+
+   /* 헤더 */
+
+   #osc-hd {
+      backdrop-filter: blur(10px);
+      background: transparent;
+      transition: 0.3s;
+      height: 100px;
+   }
+   .hd-wrap {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
       transition: 0.3s;
    }
-   
-  
-   .all-menu-close {
+   .osc-logo {
+      left: 8%;
+      z-index: 1;
+   }
+   .gnb-wrap{
+      top: 0;
+      display: flex;    
+      background: transparent;   
+      z-index: 0;   
+      overflow: initial;
+      transition: 0.3s;
+   }
+   #osc-gnb {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100px;
+      padding-left: 15%;
+      outline: 1px solid rgba(0, 0, 0, 0.1);
+   }
+   .osc-logo a {
+      background-image: url('../images/logo_wh.png');
+   }
+   .depth1 {
       position: absolute;
-      top: 30px;
-      right: 5%;
+      top: 0;
+      display: flex;
+      width: 85%;
+      height: 100px;
+      line-height: 6;
+   }
+   .depth1>li:after {
+      position: absolute;
+      top: 99px;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      transition: 0.3s;
+      transform: scaleX(0);
+      transform-origin: center center;
+   }
+   .depth1>li:hover:after {
+      transform: scaleX(0.75);
+   }
+   .depth1 > li {
+      position: relative;
+      width: 70%;
+   }
+
+   .depth1 > li > a {
+      height: 100%;
+      font-size: 1em;
+      font-weight: 500;
+      line-height: 7;
+   }
+   .depth2 {
+      display: block;
+      background-color: inherit;
+   }
+   .depth2 a {
+      font-size: 0.9em;
+      line-height: 0;
+      opacity: 0;
+      color: rgba(255,255,255,0.8);
+      overflow: hidden;
+      transition: 0.3s;
+   }
+   .depth2 a:hover { padding-left: 5px; color: #fff; font-weight: 600;}
+
+   #osc-hd:hover .all-menu-open:hover{
+      color: #f00;
+   }
+   #osc-hd.active .gnb-wrap {
+      height: 500px;
+      background-color: #000;
+   }
+   #osc-hd.active #osc-gnb {
+      outline: 1px solid rgba(255,255,255,0.5);
+   }
+   #osc-hd.active .depth2 a{
+      line-height: 3.5;
+      opacity: 1;
+   }
+   
+}
+
+/* 작은 PC 1024px~1279px */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+}
+
+/* PC 1280px~ */
+@media screen and (min-width: 1280px) {
+   .attr-nav {   
+      display: block;
+      right: 0;      
+      top: 0;
+      width: 15%;
+      height: 100%;
+   }
+  .all-menu-open > .material-symbols-outlined {
+      font-size: 35px;
+  }
+   .all-menu-open, .all-menu-close {
+      position: absolute;
+      top: 35px;
+      right: 50%;
+      display: block;
+      color: #fff;
+      height: 35px;
+   }
+   .all-menu-close-wrap {
+      position: absolute;
+      width: 15%;
+      height: 100px;
+      top: 0;
+      right: 0;
+   }
+   .all-menu-close {
       width: 35px;
-      height: 40px;
-      background: url('../images/mobile/xmark-solid.svg') center center no-repeat;      
-      transform: rotate(90deg);
+      height: 35px;
+      background: url('../images/mobile/xmark-solid.svg') center center no-repeat;
       transition: 0.5s;
       display: none;
       opacity: 0;
@@ -200,9 +200,9 @@
    }
    #all-menu{
       position: fixed;
-      top: -100%;
-      right: 0;
-      display: none;
+      top: 0;
+      right: -100%;
+      display: block;
       width: 100vw;
       z-index: 9999;
       transition: 0.5s;
@@ -210,14 +210,14 @@
       opacity: 0;
       overflow: auto;
    }
-   #all-menu.down {
-      top: 0;
+   #all-menu.slide {
+      right: 0;
       opacity: 1;
    }
-   #all-menu.down .all-gnb {
-      backdrop-filter: brightness(0.4) blur(5px);
+   #all-menu.slide .all-gnb {
+      backdrop-filter: brightness(0.3) blur(3px);
    }
-   #all-menu.down .all-menu-close {
+   #all-menu.slide .all-menu-close {
       display: block;
       opacity: 1;
    }
@@ -229,19 +229,16 @@
    .all-menu-title {
       position: absolute;
       left: 50%;
-      top: 7%;
-      width: 400px;
+      top: 5%;
+      width: 300px;
       height: 100px;
-      background: url(../images/logo_wh.png) 100% 100% / contain no-repeat;
+      background: url(../images/logo_wh.png) center center / contain no-repeat;
       transform: translateX(-50%);
    }
    .dp1 {
-      position: absolute;
       width: 100%;
       height: 100%;
-      margin-bottom: 30px;
       display: flex;
-      color: #fff;
       flex-direction: column;
       justify-content: center;
    }
@@ -250,10 +247,10 @@
       align-items: center;
       width:100%;
       line-height: 3.3;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      border-bottom: 1px solid;
    }
    .dp1>li:first-child {
-      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      border-top: 1px solid;
    }
    .dp1>li>a {
       display: block;
@@ -262,8 +259,11 @@
       font-size: 1.5em;
       border-right: 1px solid rgba(255, 255, 255, 0.3);
    }
-   .dp1 a:visited {
-      color: inherit;
+   .dp1>li, .dp1>li:first-child {
+      border-color: rgba(255, 255, 255, 0.3);
+   }
+   .dp1 a {
+      color:#fff;
    }
    .dp2 {
       display: flex;
@@ -295,153 +295,18 @@
       content: '';
       width: 0;
       height: 100%;
-      transition: 0.4s;
+      transition: 0.2s;
       z-index: -1;
    }
-   .dp2 a:hover:before{
-      width: 100%;
-   }
+   .dp2 a:hover:before{width: 100%;}
 
-   /* 헤더 */
-
-   #osc-hd {
-      backdrop-filter: blur(10px);
-      background: transparent;
-      transition: 0.5s;
-      height: 100px;
-   }
-   .hd-wrap {
-      position: relative;
-      display: flex;
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      transition: 0.3s;
-   }
-   .osc-logo {      
-      position: relative;
-      left: 8%;
-      display: block;    
-      z-index: 1;
-
-   }
-   .gnb-wrap{
-      top: 0;
-      display: flex;    
-      transition: 0.3s;
-      background: transparent;
-   }
-   #osc-gnb {
-      position: relative;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: 100px;
-      padding-left: 15%;
-      outline: 1px solid rgba(0, 0, 0, 0.1);
-   }
-   .osc-logo a, .lang {
-      transition: 0.5s;
-   }
-   .osc-logo a {
-      background-image: url('../images/logo_wh.png');
-   }
-   
-   .depth1 {
-      position: absolute;
-      top: 0;
-      display: flex;
-      width: 85%;
-      height: 100px;
-      line-height: 6;
-   }
-   .depth1>li:hover:after {
-      transform: scaleX(0.75);
-   }
-  .depth1>li:after {
-      position: absolute;
-      top: 99px;
-      display: block;
-      content: '';
-      width: 100%;
-      height: 3px;
-      background: #fff;
-      transition: 0.3s;
-      transform: scaleX(0);
-      transform-origin: center center;
-   }
-   
-   .depth1 > li {
-      position: relative;
-      width: 70%;
-   }
-
-   .depth1 > li > a {
-      width: 100%;
-      font-size: 1.1em;
-      font-weight: 500;
-   }
-   .depth2 a {
-      font-size: 0.9em;
-      line-height: 0;
-      opacity: 0;
-      color: rgba(255,255,255,0.8);
-      overflow: hidden;
-      transition: 0.3s;
-   }
-   .depth2 a:hover { padding-left: 5px; font-weight: 600;}
-
-   #osc-hd:hover .all-menu-open:hover{
-      color: #f00;
-   }
-   #osc-hd.active .gnb-wrap {
-      height: 500px;
-      background-color: #000;
-   }
-   #osc-hd.active #osc-gnb {
-      outline: 1px solid rgba(255,255,255,0.5);
-   }
-   #osc-hd.active .depth2 a{
-      line-height: 3.5;
-      opacity: 1;
-   }
-   .attr-nav {   
-      font-size: 1.1em;
-      line-height: 5;
-      display: none;
-   }
-}
-
-/* 작은 PC 1024px~1279px */
-@media screen and (min-width: 1024px) and (max-width: 1279px) {
-}
-
-/* PC 1280px~ */
-@media screen and (min-width: 1280px) {
-   #all-menu {display: block;}
    .gnb-wrap {top: 0; height: 100px;}
-   #osc-gnb {
-      padding-left: 15%;
-   }
+
+   #osc-gnb {padding-left: 15%;}
+
    .depth1 {width: 70%;}
-   .depth2 a {
-      font-size: 1em;
-   }   
-   .attr-nav {   
-      display: block;
-      right: 5%;      
-      top: 3px;
-   }
-   
-   .lang {color: #ededed;}
-   .all-menu-open{
-      position: relative;
-      top: 15px;
-      right: 5%;
-  }
-  .all-menu-open > .material-symbols-outlined {
-      font-size: 35px;
-  }
+
+   .depth2 a {font-size: 1em;}   
 
   .login-form {
    position: fixed;

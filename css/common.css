@@ -34,10 +34,11 @@
 #osc-hd {
    position: fixed;
    width: 100%;
-   z-index: 100;
+   z-index: 101;
    background: #fff;
 }
 .hd-wrap {
+   outline: 1px solid rgba(0, 0, 0, 0.15);
 }
 .osc-logo {
    position: absolute;
@@ -52,18 +53,20 @@
    height: 60px;
    background: url('../images/logo.png') center center / contain no-repeat;
 }
-.gnb-wrap{
+.gnb-wrap{   
    position: fixed;
+   top: -100%;  
    width: 100%;
    height: 100%;
+   overflow: auto;
+   display: flex;   
    background: #000;
+   flex-direction: column;
+   z-index: 1;
    transition:0.4s ease-in-out;
 }
-#osc-gnb {
-   transition: 0.6s;
-}
-#osc-gnb a {
-   
+.gnb-wrap.down {
+   top: 0;
 }
 .gnb-close, .gnb-open {
    display: block;
@@ -80,56 +83,63 @@
    position: absolute;
    top: 20px;
    right: 30px;
-   display: block;
    background: url('../images/mobile/xmark-solid.svg') center center no-repeat;
    z-index: 1;
 }
 .gnb-open{
    background: url('../images/mobile/bars-solid.svg') center center no-repeat;
-   transition: 0.3s;
 }
-
+.profile {
+   position: relative; display: block; 
+   padding: 60px 0 40px;
+   color: #fff; text-align: center; 
+   }
+.profile h2 {
+   position: relative;
+   padding-bottom: 20px;
+   margin-bottom: 20px;
+   font-size: 2.5em;
+   line-height: 1.4;
+}
+.profile h2:after {
+   content: '';
+   position: absolute;
+   display: block;
+   left: 50%;
+   bottom: 0;
+   width: 50px;
+   height: 1px;
+   background-color: #fff;   
+   transform: translateX(-50%);
+}
+.profile div {
+   font-size:1.1em;
+}
 .depth1 {
-   line-height: 2.5;
    text-align: center;
-}
-.depth1 > li {
-   transition: 0.6s;
 }
 
 .depth1 a {
    display: block;
-   height: 100%;
    color: #fff;
-   transition: 0.3s;
+}
+.depth1>li>a{
+   line-height: 3.5;
+   font-size: 1.2em;
 }
 .depth2 {
+   background: #999;
+   display: none;
+   font-size: 0.9em;
+   line-height: 2.5;
 }
 .attr-nav {
    position: absolute;
    top: 20px;
    right: 30px;
-   display: flex;
-   gap: 50px;
 }
-.lang{
-   display: block;
-   height: 100%;
-   font-size: 1.1em;
-   font-weight: 500;
-};
-.profile {
-   display: none;
-}
-.all-menu-open {display: none;}
-#osc-ft {
-}
-
-#all-menu {
-   display: none;
-}
-.ft-wrap {background: #e2e2e2;
-}
+#all-menu, .all-menu-open {display: none;}
+.ft-wrap { background: #e2e2e2; }
 .ft-logo a {
    width: 250px;
    height: 100px;
@@ -139,7 +149,7 @@
 .ft-info-wrap {
    padding: 40px 0;
 }
-.ft-info,.customer-info {
+.ft-info {
    padding: 0 15px;
 }
 .ft-info {
@@ -154,8 +164,6 @@
 .customer-info {
    font-size: 14px;
    color: #555;
-}
-.customer-icon {
 }
 .customer-info h4 {
    font-size: 18px;
