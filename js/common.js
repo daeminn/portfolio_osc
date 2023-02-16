@@ -10,9 +10,13 @@ $(window).ready(function () {
    let depth1a = $('.depth1>li>a')
    let menuPullDown = $('.all-menu-open');
    let menuCloser = $('.all-menu-close');
+   let modal = $('.modal');
    let allMenu = $('#all-menu');
    let depth2 = $(".depth2");
    let lnb = $(".lnb");
+   let loginForm = $(".login-form");
+   let loginFormOpen = $(".login-form-open");
+   let loginFormClose = $(".login-form-close, .modal");
    rwd();
 
    $(window).resize(function () {
@@ -51,19 +55,17 @@ $(window).ready(function () {
    //PC GNB 활성화
    hd.on({
       "mouseenter": function () {
+         hd.addClass("active");
          if (body.hasClass("pc")) {
-            hd.addClass("active");
+            
          }
-      }
-   });
-   //PC GNB 비활성화
-   hd.on({
+      },
       "mouseleave": function () {
          if (body.hasClass("pc")) {
             hd.removeClass("active");
          }
       }
-   })
+   });
   
 
    //모바일 GNB 열기
@@ -100,6 +102,23 @@ $(window).ready(function () {
          if (body.hasClass("pc")) {
             allMenu.removeClass("slide");
             menuPullDown.fadeIn();
+         }
+      }
+   })
+
+   loginFormOpen.on ({
+      "click":function() {
+         if (body.hasClass("pc")) {
+            loginForm.addClass("open");
+            modal.show();
+         }
+      }
+   })
+   loginFormClose.on ({
+      "click":function() {
+         if (body.hasClass("pc")) {
+            loginForm.removeClass("open");
+            modal.hide();
          }
       }
    })

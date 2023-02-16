@@ -1,0 +1,10 @@
+.sub-main-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  background: url("../images/sub/arrow_circle_right.svg") left top / contain no-repeat;
+  padding-left: 40px;
+  font-size: 1.2em;
+}

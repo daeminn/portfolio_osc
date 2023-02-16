@@ -1,16 +1,7 @@
 /* 모바일만 ~767px */
 @media screen and (max-width: 767px) {
-  .sec00 {
-    background-image: unset;
-  }
-  .intro-bg {    
-    height: 720px;
-    background-image: url('../images/mo_main1A.jpg');
-    background-repeat: no-repeat;
-  }
-  .intro-wrap {
-    left: inherit;
-    width: 100%;
+  #fp-nav {
+    display: none;
   }
   .intro-text {
     white-space: normal;
@@ -19,13 +10,7 @@
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
   }
-  .sec01-box,.news-wrap {position: static; height: 720px;}
-  .more {padding: 15px;}
-  .develop, .business {
-    width: 100%;
-    height: 50%;
-    float: left;
-  }
+  .biz-wrap,.news-wrap {position: static;}
   .dev-list, .bsn-list {line-height: 1.5; width: 70%; overflow: hidden;}
   .dev-list {top:50px; bottom:initial; line-height: 2.5;}
   .bsn-list {top:initial; bottom: 50px; left: 50px; right: initial;}
@@ -41,28 +26,22 @@
   .news-title-wrap {left: 5%; top: 10%; width: 100%;}
   .news-title-wrap h2 {top:3%; font-size: 2.5em;}
   .news-title-wrap p {top:30%; font-size: 1.2em;}
-  .news-title-wrap>.more-wrap {
-      left: initial;
-      right: 10%;
-      bottom: initial;
-  }
-  #osc-main.fp-viewing-2 .news-tit {animation: opacity 0.5s linear 0.3s both;}
-  .news-box {left:5%; top: 35%; width: 90%;}
+
+  #osc-main.fp-viewing-media .news-tit {animation: opacity 0.5s linear 0.3s both;}
+  .news-box {width: 100%;}
   .news-li {width: 100%;}
   .news-li:nth-last-child(1),.news-li:nth-last-child(2),.news-li:nth-last-child(3){display: none;}
   .news-txt {display: none;}
-  .emp-bg {height: 500px;}
-  .emp-wrap {top:15%; left: initial; width: auto;}
   #fp-nav.fp-right {right: 25px;}
-  #osc-main.fp-viewing-3 #fp-nav ul li a span {border-color: #fff;}
+  #osc-main.fp-viewing-incruit #fp-nav ul li a span {border-color: #fff;}
 
-  #osc-main.fp-viewing-3 #fp-nav ul li a.active span, #osc-main.fp-viewing-3 #fp-nav ul li:hover a.active span {border:1px solid #fff; background: #000;}
-  #osc-main.fp-viewing-3 #fp-nav ul li a span,
-  #osc-main.fp-viewing-3 #fp-nav ul li a::before,
-  #osc-main.fp-viewing-3 #fp-nav ul li a::after {
+  #osc-main.fp-viewing-incruit #fp-nav ul li a.active span, #osc-main.fp-viewing-incruit #fp-nav ul li:hover a.active span {border:1px solid #fff; background: #000;}
+  #osc-main.fp-viewing-incruit #fp-nav ul li a span,
+  #osc-main.fp-viewing-incruit #fp-nav ul li a::before,
+  #osc-main.fp-viewing-incruit #fp-nav ul li a::after {
     background-color: #fff;
   }
-  #osc-main.fp-viewing-3 #fp-nav ul li .fp-tooltip {
+  #osc-main.fp-viewing-incruit #fp-nav ul li .fp-tooltip {
     color: #fff;
  
   }
@@ -70,9 +49,14 @@
 /* 태블릿부터 768px~ */
 @media screen and (min-width: 768px) {
   .news-box {
-    top: 40%; 
-    left: 28%;
-    width: 75%;
+    width: 100%;
+  }
+  .biz-wrap > div {
+    display: table-cell;
+    width: 50%;
+  }
+  .biz-wrap > .develop {
+    padding-top: 150px;
   }
 }
 
@@ -83,12 +67,51 @@
 
 /* PC부터 1024px~ */
 @media screen and (min-width: 1024px) {
-  #osc-main.fp-viewing-1 #osc-hd,
-  #osc-main.fp-viewing-2 #osc-hd,
-  #osc-main.fp-viewing-3 #osc-hd,
+  .fp-tableCell {
+    padding-top: 100px;
+  }
+  #osc-main.fp-viewing-biz #osc-hd,
+  #osc-main.fp-viewing-media #osc-hd,
+  #osc-main.fp-viewing-incruit #osc-hd,
   #osc-main.fp-viewing-4 #osc-hd{
     background: rgba(0,0,0,0.7);
   }
+  .intro-title-wrap {
+    position: relative;
+    width: 750px;
+    padding: 50px;
+    white-space: nowrap;
+    background:rgba(0,0,0,0.6);
+    overflow: hidden;
+    z-index: 1;
+    opacity: 1;
+    transition: 0.5s;
+  }
+  .more {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+  }
+  .biz-wrap > div {
+    padding: 100px;
+    padding-top: 200px;
+  }
+  .emp-wrap {
+    position: relative;
+  }
+  .news-wrap .more {
+    position: static;
+  }
+  .news-title-wrap {
+    float: left;
+    width: 400px;
+  }
+  .news-box {
+    float: left;
+    width: calc(100% - 400px);
+  }
+  
 }
 
 /* 작은 PC 1024px~1279px */

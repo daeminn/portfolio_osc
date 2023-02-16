@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oscotec lnc.</title>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/common_res.css">
+  <link rel="stylesheet" href="./css/sub.css">
+  <link rel="stylesheet" href="./css/sub_MBbones.css">
+  <script src="./js/jquery-3.6.1.min.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/sub.js"></script>
+</head>
+<body id="sub2-0">
+  <div id="skip">
+    <a href="#osc-main">본문 바로가기</a>
+    <a href="#osc-gnb">주 메뉴 바로가기</a>
+    <a href="#osc-lnb">서브 메뉴 바로가기</a>
+  </div>
+  <header id="osc-hd">
+    <div class="hd-wrap">
+      <h1 class="osc-logo"><a href="index.html"><span class="blind">오스코텍</span></a></h1>
+      <div class="gnb-wrap">
+        <div class="gnb-close"><a href="#"><span class="blind">gnb 닫기 버튼</span></a></div>
+        <div class="profile">
+          <h2>Oscotec Inc.</h2>
+          <div>Translating science into medicine</div>
+        </div>
+        <nav id="osc-gnb">
+          <ul class="depth1">
+            <li>
+              <a href="sub_introduce.html">회사소개</a>
+              <ul class="depth2">
+                <li><a href="sub_introduce.html">오스코텍 소개</a></li>
+                <li><a href="#">회사연혁</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">신약개발</a>
+              <ul class="depth2">
+                <li><a href="#">신약개발개요</a></li>
+                <li><a href="sub_RA.html">류마티스 관절염</a></li>
+                <li><a href="#">면역혈소판 감소증</a></li>
+                <li><a href="#">급성골수성 백혈병</a></li>
+                <li><a href="#">비소세포성폐암</a></li>
+                <li><a href="#">알츠하이머 치매</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="sub_MBbones.html">의료사업</a>
+              <ul class="depth2">
+                <li><a href="sub_MBbones.html">치과용뼈이식재</a></li>
+                <li><a href="#">치과용멤브레인</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">기능소재</a>
+              <ul class="depth2">
+                <li><a href="#">건강식품소재</a></li>
+                <li><a href="#">일반식품소재</a></li>
+                <li><a href="#">Product</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">투자정보</a>
+              <ul class="depth2">
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">언론센터</a></li>
+                <li><a href="#">IR Materials</a></li>
+                <li><a href="#">Coverage Reports</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">인재채용</a>
+              <ul class="depth2">
+                <li><a href="#">채용공고</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">준법경영</a>
+              <ul class="depth2">
+                <li><a href="#">윤리강령</a></li>
+                <li><a href="#">신고하기</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="attr-nav">
+        <div><a href="#" class="all-menu-open"><span class="material-symbols-outlined">apps</span></a></div>
+        <div><a href="#" class="gnb-open"><span class="blind">메뉴버튼</span></a></div>
+        <div><a href="#" class="login-form-open"><span class="material-symbols-outlined">login</span></a></div>
+      </div>
+    </div>
+    <div class="modal"></div>
+  </header>
+  <div id="all-menu">
+    <nav class="all-gnb">
+      <h2 class="all-menu-title"><span class="blind">Oscotec inc.</span></h2>
+      <ul class="dp1">
+        <li>
+          <a href="sub_introduce.html">회사소개</a>
+          <ul class="dp2">
+            <li><a href="sub_introduce.html">오스코텍 소개</a></li>
+            <li><a href="#">회사연혁</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">신약개발</a>
+          <ul class="dp2">
+            <li><a href="#">신약개발개요</a></li>
+            <li><a href="sub_RA.html">류마티스 관절염</a></li>
+            <li><a href="#">면역혈소판 감소증</a></li>
+            <li><a href="#">급성골수성 백혈병</a></li>
+            <li><a href="#">비소세포성폐암</a></li>
+            <li><a href="#">알츠하이머 치매</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="sub_MBbones.html">의료사업</a>
+          <ul class="dp2">
+            <li><a href="sub_MBbones.html">치과용뼈이식재</a></li>
+            <li><a href="#">치과용멤브레인</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">기능소재</a>
+          <ul class="dp2">
+            <li><a href="#">건강식품소재</a></li>
+            <li><a href="#">일반식품소재</a></li>
+            <li><a href="#">Product</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">투자정보</a>
+          <ul class="dp2">
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">언론센터</a></li>
+            <li><a href="#">IR Materials</a></li>
+            <li><a href="#">Coverage Reports</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">인재채용</a>
+          <ul class="dp2">
+            <li><a href="#">채용공고</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">준법경영</a>
+          <ul class="dp2">
+            <li><a href="#">윤리강령</a></li>
+            <li><a href="#">신고하기</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="all-menu-close-wrap"><a href="#" class="all-menu-close"><span class="blind">메뉴버튼</span></a></div>    </nav>
+  </div>
+  <div class="login-form">
+    <div><a href="#" class="login-form-close"><span class="material-symbols-outlined">
+      close
+      </span></a></div>
+    <div class="profile">
+      <h2>Oscotec Inc.</h2>
+      <div>Translating science into medicine</div>
+    </div>
+    <form action="pro/LoginPro.jsp" method="post" name="LoginInfo" onsubmit="return checkValue()">
+   		<!-- <%
+             	//로그인이 되었을 경우에는 회원가입, 로그인 버튼을 보여준다.
+             	if(session.getAttribute("sessionID") == null){
+		%> -->
+      <div>
+        <input type="text" class="form-control" name="id" placeholder="아이디" >
+      </div>
+      <div>
+        <input type="password" class="form-control" name="password" placeholder="비밀번호">
+      </div>
+      <!-- <%		
+              	}
+      %>
+      <div>
+   	<%
+	   	String msg = request.getParameter("msg");
+	   	if(msg!=null && msg.equals("0")) { //비밀번호 틀린 경우
+			out.println("<script>alert('비밀번호가 맞지 않습니다.');window.location.href='index.jsp'</script>");
+	   	} else if (msg!=null && msg.equals("-1")) {
+	   		out.println("<script>alert('아이디가 존재하지 않습니다.');window.location.href='index.jsp'</script>");
+	   	}
+	   //로그인이 안되었을 경우에는 회원가입, 로그인 버튼을 보여준다.
+	            	if(session.getAttribute("sessionID") == null){
+	%> -->
+			<div class="login">
+		        <input class="signup-btn" type="button" onclick="javascript:window.location='mainForm.jsp';" value="회원가입">
+		        <input type = "submit" value="로그인" class="submit-btn" >
+		        <!-- <li><a href= class="login-btn">로그인</a></li> -->
+	        </div>
+      	<!-- <%		
+            	} else { //로그인이 되었을 경우 회원아이디와 로그아웃 버튼을 보여준다.
+		%>
+	       	<ul class="login">
+	            <li class="login-txt"><%=session.getAttribute("sessionID") %>님이 로그인 되었습니다.</li>
+	            <li>
+	            	<input type="button" id="updateBtn" class="btn btn-primary" value="내정보" onclick="javascript:window.location='mainForm.jsp?contentPage=userInfoForm.jsp';">
+	            	<a href="pro/LogoutPro.jsp" class="logout">로그아웃</a>
+	            </li>
+	        </ul>
+      	<% 		   
+       			}
+       	%> -->
+      </div>
+    </form>
+  </div>  
+  
+  <div class="sub-bg-area">
+  </div>
+  <header id="osc-sub-hd">
+      <div class="hgroup-wrap">
+        <div class="hgroup">
+          <h2 class="sub-h2"></h2>
+          <div class="sub-h2-desc">
+            <span class="desc-txt"></span>
+          </div>
+        </div>
+      </div>
+      <nav id="osc-lnb" class="lnb-container">
+          <h2 class="blind">LNB</h2>
+          <div class="wrap lnb-wrap">
+              <a href="'/osc/'" class="btn-home">
+                  <span class="blind">홈으로</span>
+                  <span class="material-symbols-outlined">home</span>
+              </a>
+              <h3 class="sound-only">메인메뉴</h3>
+              <ol class="lnb lnb-depth1">
+              </ol>
+              <h3 class="sound-only">서브메뉴</h3>
+              <ol class="lnb lnb-depth2">
+              </ol>
+              <div class="txt-size-wrap">
+                  <button class="txt-size-plus-btn">글자 크게</button>
+                  <button class="txt-size-minus-btn">글자 작게</button>
+                  <button class="txt-reset-btn">100%</button>
+              </div>
+          </div>
+      </nav>
+  </header>  
+  <main id="osc-main-container">
+    <section>
+        <div class="sub-main">
+        <div class="sub-main-content">
+          <div class="row">
+            <ul class="tab-menu">
+              <li data-tab="tab1" class="tab-li on"><a href="#void">InduCera</a></li>
+              <li data-tab="tab2" class="tab-li"><a href="#void">BioCera-F</a></li>
+              <li data-tab="tab3" class="tab-li"><a href="#void">SynCera II</a></li>
+              <li data-tab="tab4" class="tab-li"><a href="#void">CollaCera</a></li>
+            </ul>
+            <div id="tab1" class="tabcontent show">
+              <img src="./images/sub/sub02_tabct01.jpg" title="InduCera" alt="InduCera">
+              <h3 class="tabcon-title">InduCera</h3>
+              <h4>제품의 개요 및 성분</h4>
+              <div class="tabcon-txt">
+                InduCera는 생체 친화적인 칼슘포스페이트(Ca-P)를 이중 코팅한 송아지뼈를 원료로 하는 천연 무기질 재료입니다. 본 제품은 엄격한 제조공정에 따라 고도로 정제된 골전도성 무기질 재료로서 면역학적 거부반응이 없으며 형태 구조학적으로 인체의 골과 같은 구조를 지니고 있습니다.
+                InduCera의 bone matrix는 사람 해면골과 유사한 거대, 미세 다공구조를 가지고 있으며 상호 연결된 다공성과 천연 구조로 인해 이식 부위에 재혈관화가 이루어짐으로써 신생골의 형성과 성장을 촉진합니다. 또한 전하를 띈 Ca-P 코팅층은 세포와 반응성이 매우 높아 조골세포, 파골세포와 잘 결합함으로써 더욱더 신생골 형성과 성장을 촉진시킵니다.
+              </div>
+              <h4>제품의 안전성</h4>
+              <div class="tabcon-txt">
+                · 원산지 : OIE(국제수역사무국)에서 인정한 BSE 안심 국가인 호주산 송아지 뼈를 사용합니다.
+                · 원재료 : EU 법안 지시문서에 따라 BSE로부터 안전한 부위인 송아지의 대퇴부에서 얻어진 100% 해면골 만을 사용합니다.
+                · 추적성(Traceability) : 농장사육에서 도축, 운송까지 엄격한 통제가 이루어집니다.
+                · 제조공정(Processing) : 바이러스 불활성화 공정과 유기물 제거 공정을 통해 천연골 무기질을 얻을 수 있습니다.
+                · 멸균 (Radiation Sterilization) : 이중포장으로 구성되어 있으며 방사선 멸균한 일회용 멸균 의료기기입니다.
+              </div>
+              <h4>인체의 골과 유사한 구조</h4>
+              <img class="tabcon-img" src="./images/sub/sub_mb_1_2.png" title="인듀세라 : 인체의 골과 가장 유사한 구조" alt="인듀세라 : 인체의 골과 가장 유사한 구조">
+              <div class="tabcon-txt">
+                · 원산지 : OIE(국제수역사무국)에서 인정한 BSE 안심 국가인 호주산 송아지 뼈를 사용합니다.
+                · 원재료 : EU 법안 지시문서에 따라 BSE로부터 안전한 부위인 송아지의 대퇴부에서 얻어진 100% 해면골 만을 사용합니다.
+                · 추적성(Traceability) : 농장사육에서 도축, 운송까지 엄격한 통제가 이루어집니다.
+                · 제조공정(Processing) : 바이러스 불활성화 공정과 유기물 제거 공정을 통해 천연골 무기질을 얻을 수 있습니다.
+                · 멸균 (Radiation Sterilization) : 이중포장으로 구성되어 있으며 방사선 멸균한 일회용 멸균 의료기기입니다.
+              </div>
+              <h4>제품사양</h4>
+              <div class="tabcon-txt">
+                <table class="tabcon-table">
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Model No.</th>
+                      <th>Particle Size(mm)</th>
+                      <th>Volume(g)</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td rowspan="8">Inducera</td>
+                    <td>3001</td>
+                    <td>0.25 ~ 1.0</td>
+                    <td>0.15</td>
+                  </tr>
+                  <tr>
+                    <td class="even">3020</td>
+                    <td class="even">1.0 ~ 2.0</td>
+                    <td class="even">0.25</td>
+                  </tr>
+                  <tr>
+                    <td>3101</td>
+                    <td>0.25 ~ 1.0</td>
+                    <td>0.25</td>
+                  </tr>
+                  <tr>
+                    <td class="even">3120</td>
+                    <td class="even">1.0 ~ 2.0</td>
+                    <td class="even">0.25</td>
+                  </tr>
+                  <tr>
+                    <td>3201</td>
+                    <td>0.25 ~ 1.0</td>
+                    <td>0.5</td>
+                  </tr>
+                  <tr>
+                    <td class="even">3220</td>
+                    <td class="even">1.0 ~ 2.0</td>
+                    <td class="even">0.5</td>
+                  </tr>
+                  <tr>
+                    <td>3301</td>
+                    <td>0.25 ~ 1.0</td>
+                    <td>1.0</td>
+                  </tr>
+                  <tr>
+                    <td class="even">3320</td>
+                    <td class="even">1.0 ~ 2.0</td>
+                    <td class="even">1.0</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id="tab2" class="tabcontent">
+              <img src="./images/sub/sub02_tabct02.jpg" title="BioCera-F" alt="BioCera-F">
+              <h3 class="tabcon-title">BioCera-F</h3>
+              <h4>제품의 개요 및 성분</h4>
+              <div class="tabcon-txt">
+                BioCera-F는 청정지역 호주산 송아지뼈를 원료로 하는 천연골 무기질 재료입니다. 본 제품은 엄격한 제조공정에 따라 고도로 정제된 골전도성 무기질 재료로써 면역학적 거부반응이 없으며 형태 구조학적으로 인체의 골과 같은 구조를 지니고 있습니다. BioCera-F의 bone matrix는 사람 해면골과 유사한 거대, 미세 다공구조를 가지고 있으며 상호 연결된 다공성과 천연 구조로 인해 이식 부위에 재혈관화가 용이하게 이루어짐으로써 신생골의 형성과 성장을 촉진합니다.
+              </div>
+              <h4>제품의 안전성</h4>
+              <div class="tabcon-txt">
+                · 원산지 : OIE(국제수역사무국)에서 인정한 BSE 안심 국가인 호주산 송아지 뼈를 사용합니다.
+                · 원재료 : EU 법안 지시문서에 따라 BSE로부터 안전한 부위인 송아지의 대퇴부에서 얻어진 100% 해면골 만을 사용합니다.
+                · 추적성 (Traceability) : 농장사육에서 도축, 운송까지 엄격한 통제가 이루어집니다.
+                · 제조공정 (Processing) : 바이러스 불활성화 공정과 유기물 제거 공정을 통한 천연골 무기질만으로 구성되어 있습니다.
+                · 멸균 (Radiation Sterilization) : 이중포장으로 구성되어 있으며 방사선 멸균한 일회용 멸균 의료기기입니다.
+              </div>
+              <h4>인체의 골과 유사한 구조</h4>
+              <img class="tabcon-img" src="./images/sub/2020_5-6_sub_mb_1_4.png" title="바이오세라F : 인체의 골과 가장 유사한 구조" alt="바이오세라F : 인체의 골과 가장 유사한 구조">
+              <div class="tabcon-txt">
+                인체골과 유사한 다공 구조로 이식재 내부의 Macropore는 혈관 유입 및 형성에 도움을 주고, 이식재 표면의 Micropore는 조골세포 유착을 도와 신생골 형성을 촉진합니다.
+              </div>
+              <h4>사용방법</h4>
+              <img class="tabcon-img" src="./images/sub/2020_5-6_sub_mb_1_5.png" title="바이오세라F 사용방법" alt="바이오세라F 사용방법">
+              <h4>제품사양</h4>
+              <div class="tabcon-txt">
+                <table class="tabcon-table">
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Particle Size(mm)</th>
+                      <th>Volume(cc)</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>S-015</td>
+                    <td>0.25 ~ 1.0</td>
+                    <td>0.15</td>
+                  </tr>
+                  <tr>
+                    <td class="even">L-015</td>
+                    <td class="even">1.0 ~ 2.0</td>
+                    <td class="even">0.15</td>
+                  </tr>
+                  <tr>
+                    <td>S-025</td>
+                    <td>0.25 ~ 1.0</td>
+                    <td>0.25</td>
+                  </tr>
+                  <tr>
+                    <td class="even">L-025</td>
+                    <td class="even">1.0 ~ 2.0</td>
+                    <td class="even">0.25</td>
+                  </tr>
+                  <tr>
+                    <td>S-050</td>
+                    <td>0.25 ~ 1.0</td>
+                    <td>0.5</td>
+                  </tr>
+                  <tr>
+                    <td class="even">L-050</td>
+                    <td class="even">1.0 ~ 2.0</td>
+                    <td class="even">0.5</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id="tab3" class="tabcontent">
+              <img src="./images/sub/sub02_tabct03.jpg" title="SynCera II" alt="SynCera II">
+              <h3 class="tabcon-title">SynCera II</h3>
+              <h4>순수 β-Tricalcium Phosphate 합성골</h4>
+              <div class="tabcon-txt">
+                골 전도력이 뛰어난 순수 베타 트리칼슘 포스페이트(β-TCP)로 만든 합성골 이식재입니다.
+              </div>
+              <h4>이중 기공구조의 골전도력</h4>
+              <div class="tabcon-txt">
+                · SynCera II의 이중 기공 구조
+              </div>
+              <img src="./images/sub/2020_5-6_sub_mb_1_6.png" title="신세라2의 이중 기공 구조" alt="신세라2의 이중 기공 구조">
+              <div class="tabcon-txt">
+                SynCera II 의 이중 기공 구조 : SynCera II 는 거대기공과 미세기공이 골이식재 내외부에 혈관처럼 잘 발달되어 있습니다. 따라서 이식시 골이식재의 내/외부에서 동시에 골전도가 시작됩니다.
+              </div>
+              <h4>제품사양</h4>
+              <div class="tabcon-txt">
+                <table class="tabcon-table">
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Particle Size(mm)</th>
+                      <th>Volume(g)</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>2150</td>
+                    <td>0.4 ~ 1.0</td>
+                    <td>0.25</td>
+                  </tr>
+                  <tr>
+                    <td class="even">2110</td>
+                    <td class="even">1.0 ~ 2.0</td>
+                    <td class="even">0.25</td>
+                  </tr>
+                  <tr>
+                    <td>2250</td>
+                    <td>0.4 ~ 1.0</td>
+                    <td>0.5</td>
+                  </tr>
+                  <tr>
+                    <td class="even">2210</td>
+                    <td class="even">1.0 ~ 2.0</td>
+                    <td class="even">0.5</td>
+                  </tr>
+                  <tr>
+                    <td>2350</td>
+                    <td>0.4 ~ 1.0</td>
+                    <td>1.0</td>
+                  </tr>
+                  <tr>
+                    <td class="even">2310</td>
+                    <td class="even">1.0 ~ 2.0</td>
+                    <td class="even">1.0</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id="tab4" class="tabcontent">
+              <img src="./images/sub/sub02_tabct04.jpg" title="COLLACERA" alt="COLLACERA">
+              <h3 class="tabcon-title">COLLACERA</h3>
+              <h4>Feature</h4>
+              <div class="tabcon-txt">
+                · 서로 연결된 Macro / Micro 이중 기공구조를 갖는 다공성 인산 칼슘 골이식재
+                · 60% Hydroxyapatite / 40% B-Tricalcium Phosphate + Type I Collagen
+                · 인체 해면골과 유사한 Trabecular 구조 및 안정적인 체내 골 흡수성
+                · 연결된 Macro 기공으로 혈관 성장과 골세포 이동이 가능
+                · 골격 표면의 Micro 기공 구조는 골세포 부착에 매우 유리한 구조
+                · 조직공학적 골재생에 관한 최적의 Scaffold
+                · 콜라겐에 의한 조직재생 및 지혈효과
+              </div>
+              <h4>Macro / Micro Pore Structure</h4>
+              <img src="./images/sub/2020_5-6_sub_mb_1_10.png" title="콜라세라 : Macro/Micro Pore structure" alt="콜라세라 : Macro/Micro Pore structure">
+              <h4>Flexibility of COLLACERA</h4>
+              <div class="tabcon-txt">               
+                · 조작의 편리성 (수화시 다양한 형상 변형)
+                · 공간유지기능 및 신생골 형성기능
+              </div>
+              <h4>Clinical Use</h4>
+              <img src="./images/sub/2020_5-6_sub_mb_1_12.png" title="콜라세라 : Clinical Use" alt="콜라세라 : Clinical Use">
+              <h4>제품규격</h4>
+              <img src="./images/sub/2020_5-6_sub_mb_1_13.png" title="콜라세라 제품규격" alt="콜라세라 제품규격">
+              <h4>조작가이드</h4>
+              <div>
+                <iframe width="700" height="400" src="https://www.youtube.com/embed/PjBFPOukZTU?rel=0"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>    
+  <footer id="osc-ft">
+    <div class="osc-ft-container">
+      <h2 class="blind">푸터 영역</h2>
+      <div class="ft-wrap">
+        <div class="ft-info-wrap">
+          <div class="ft-logo"><span class="blind">푸터로고</span></div>
+          <div class="ft-info">
+            <h3>(주)오스코텍</h3>
+            경기도 성남시 분당구 대왕판교로 700(삼평동) 코리아바이오파크 A동 9층<br>대표 : 김정근, 윤태영 | 사업자등록번호 : 312-81-32175
+          </div>
+          <div class="ft-cs">
+            <div class="cs-info">
+              <h3>CUSTOMER CENTER</h3>
+              <div>※ 업무 시간 : 평일 09: 00 ~ 18: 00 / 주말 · 공휴일 휴무</div>
+            </div>
+            <div class="contact-info">
+              <h3>CONTACT US</h3>
+              <div>
+                메일주시면 확인 후 회신드립니다.<br>
+                <button class="btn-contact">메일보내기</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ft-sub-copyright">이 사이트는 (주)오스코텍과 실제 관련이 없으며 포트폴리오용으로 제작되었습니다.</div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,46 +1,41 @@
 $(function(){
-  const body = $("body");
-  const hd = $('#osc-hd');
-  const fpCon = $("#osc-main-container");
-  let ftEl = $("#osc-ft").clone().addClass("section fp-auto-height");;
-  fpCon.append(ftEl);
-  fpCon.fullpage({
-    navigationTooltips: ['01','02','03','04'],
-    navigation: true,
-    navigationPosition: 'right',
-    scrollingSpeed: 1000,
-    normalScrollElements: '.gnb-wrap, #all-menu',
-    lazyLoading: true,
-    showActiveTooltip:true,
+   const body = $("body");
+   const hd = $('#osc-hd');
+   const fpCon = $("#osc-main-container");
+   let ftEl = $(".osc-ft-container").clone();
+   $(".sec04").append(ftEl);
+   fpCon.fullpage({
+     navigationTooltips: ['처음으로','신약개발·의료사업','언론보도','인재채용', "하단정보"],
+     navigation: true,
+     navigationPosition: 'right',
+     scrollingSpeed: 1000,
+     normalScrollElements: '.gnb-wrap, #all-menu',
+     lazyLoading: true,
+     showActiveTooltip:true,
+     anchors: ["main", "biz", "media", "incruit", "ft"]  
+    });
+   
+  rwd();
 
-   });
+  $(window).resize(function () {
+     rwd();
+  });
 
-   rwd();
-
-   $(window).resize(function () {
-      rwd();
-   });
-
-   function rwd() {
-    wW = window.innerWidth;
-    wH = window.innerHeight;
-    if (wW < 768) {
-       body.addClass("mo").removeClass("tb pc");
-       $(".section").addClass("fp-auto-height");
-       $(".develop, .business").css("width","inherit")      
-    
-    } else if (wW >= 768 && wW < 1024) {
-       body.addClass("tb").removeClass("mo pc");
-       $(".section").removeClass("fp-auto-height");
-       $("#osc-ft").addClass("fp-auto-height");
-       $(".develop, .business").css("width","50%");
-    } else {
-       body.addClass("pc").removeClass("mo tb");
-       $(".section").removeClass("fp-auto-height");
-       $("#osc-ft").addClass("fp-auto-height");
-       $(".develop, .business").css("width","50%");         
-    }
-   }  
+  function rwd() {
+   wW = window.innerWidth;
+   wH = window.innerHeight;
+   if (wW < 768) {
+      body.addClass("mo").removeClass("tb pc");
+      $(".develop, .business").css("width","inherit")      
+   
+   } else if (wW >= 768 && wW < 1024) {
+      body.addClass("tb").removeClass("mo pc");
+      $(".develop, .business").css("width","50%");
+   } else {
+      body.addClass("pc").removeClass("mo tb");
+      $(".develop, .business").css("width","50%");         
+   }
+  }  
 
   
   //풀페이지 네비게이션 show/hide
