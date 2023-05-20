@@ -63,6 +63,7 @@
    background: #000;
    flex-direction: column;
    transition:0.4s ease-in-out;
+   z-index: 1;
 }
 .gnb-wrap.down {
    top: 0;
@@ -85,7 +86,7 @@
    background: url('../images/mobile/xmark-solid.svg') center center no-repeat;
    z-index: 1;
 }
-.gnb-open{
+.gnb-open {
    background: url('../images/mobile/bars-solid.svg') center center no-repeat;
 }
 .profile {
@@ -166,12 +167,20 @@
    border: 1px solid #999;
    color: #555;
    font-size: 16px;
+   transition: 0.3s;
+}
+.btn-contact:hover {
+   border-radius: 15px;
+   background-color: #555;
+   color: #fff;
 }
 .ft-sub-copyright {
    background-color: #333;
    color: #999;
    text-align: center;
-   padding: 1em 0;
+   padding: 1em;
    font-size: 16px;
 }
 .login-form, .login-form-open {display: none;}
+
+#osc-hd .pf {color: #0A58CA;}

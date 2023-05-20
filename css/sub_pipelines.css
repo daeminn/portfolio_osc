@@ -1,0 +1,58 @@
+.pipe-tit {padding: 10px 30px; font-weight: 400;}
+.table-wrap {padding-top: 30px; overflow: auto;}
+.pp-table {cursor: crosshair;}
+th, td {
+  text-align: center;
+  border: 5px solid #fff;
+  background-color: #EFEFEF;
+}
+.tb-tit {padding: 15px 0 2.5px 0; background-color: #395AFF; color: #fff; font-size: 1.3em;}
+.tb-in {color: #000;  margin-top: 10px;}
+.tb-in th {padding: 10px; border-width: 0 5px 2.5px; border-color: #395AFF; border-style: solid; font-size: 0.8em; white-space: nowrap;}
+.tb-in th, td {width: 20%;}
+.tb-desc {padding: 20px 20px;}
+.target {height: 75px; font-weight: 400; }
+.target[rowspan="2"] {padding: 25px 30px;}
+.target-name {margin: 0; color: #3757F6; font-weight: bolder;}
+.target, td {white-space: nowrap; padding: 10px;}
+.indication {height: 75px; padding: 10px;}
+.target, .indication {font-size: 1.3em;}
+
+.bar {position: relative; padding-left: 5px; transition: 0.4s;}
+.bar::after {
+  position: absolute; 
+  left: 5px;
+  bottom: 15px; 
+  display: inline-block; 
+  height: 37.5px; 
+  background: url('../images/sub/apnimedbar.png') right center / cover no-repeat;
+  content: ''; 
+  transition: 0.4s;
+}
+.bar.bar03::after, .bar.bar04::after, .bar.bar07::after, .bar.bar08::after {bottom: 25px;}
+.bar:hover::after {background-image: url('../images/sub/apnimedbar_after.png'); }
+@keyframes bar01-ani { from {width: 0%;} to {width: 400%;}}
+@keyframes bar02-ani { from {width: 0%;} to {width: 350%;}}
+@keyframes bar03-ani { from {width: 0%;} to {width: 430%;}}
+@keyframes bar04-ani { from {width: 0%;} to {width: 140%;}}
+@keyframes bar05-ani { from {width: 0%;} to {width: 300%;}}
+@keyframes bar06-ani { from {width: 0%;} to {width: 270%;}}
+@keyframes bar07-ani { from {width: 0%;} to {width: 140%;}}
+@keyframes bar08-ani { from {width: 0%;} to {width: 140%;}}
+.bar.bar01::after { animation: bar01-ani 0.7s linear 0.7s both;}
+.bar.bar02::after { animation: bar02-ani 0.7s linear 0.7s both;}
+.bar.bar03::after { animation: bar03-ani 0.7s linear 0.7s both;}
+.bar.bar04::after { animation: bar04-ani 0.7s linear 0.7s both;}
+.bar.bar05::after { animation: bar05-ani 0.7s linear 0.7s both;}
+.bar.bar06::after { animation: bar06-ani 0.7s linear 0.7s both;}
+.bar.bar07::after { animation: bar07-ani 0.7s linear 0.7s both;}
+.bar.bar08::after { animation: bar08-ani 0.7s linear 0.7s both;}
+
+/* 모바일 */
+@media screen and (max-width:767px) {
+  .pipe-tit {padding: 10px;}
+  .pp-table {
+  }
+  .table-wrap {padding-top: 0;}
+  .row {padding: 0;}
+}

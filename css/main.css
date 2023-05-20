@@ -25,6 +25,7 @@
    opacity: 1;
 }
 .intro-title-wrap {
+   width: 100%;
    padding: 5%;
    background:rgba(0,0,0,0.6);
 }
@@ -33,7 +34,6 @@
    display: block;
    padding-bottom: 10px;
    z-index: 1;
-   cursor: pointer;
 }
 
 
@@ -81,7 +81,7 @@
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
-   transition:ease-in-out 0.3s;
+   transition: 0.3s;
    z-index: 1;
 }
 .biz-wrap > .develop {
@@ -145,9 +145,9 @@
    transform-origin: left;
    transition: 0.3s;
 }
-.dev-list>li:hover:after, .bsn-list>li>a:hover:after, .bsn-list ul a:hover:after {transform: scaleX(1);}
-.dev-list>li a, .bsn-list>li>a, .bsn-list ul a {transition: 0.3s;}
-.dev-list>li a:hover, .bsn-list>li>a:hover, .bsn-list ul a:hover {color: #fff;}
+.dev-list > li:hover:after, .bsn-list > li > a:hover:after, .bsn-list ul a:hover:after {transform: scaleX(1);}
+.dev-list > li a, .bsn-list > li > a, .bsn-list ul a {transition: 0.3s;}
+.dev-list > li a:hover, .bsn-list > li > a:hover, .bsn-list ul a:hover {color: #fff;}
 
 .dev-list {
    bottom: 15%;
@@ -182,7 +182,7 @@
 /* sec02 */
 .sec02 {}
 .news-wrap {
-
+   padding-left: 3%;
 }
 
 .news-title-wrap {
@@ -197,11 +197,12 @@
    font-size: 1.3em;
    font-weight: 500;
 }
+
+
 .news-box {
    width: 65%;
    transition: 0.4s;
 }
-
 .news-li {
    position: relative;
    float: left;
@@ -211,7 +212,6 @@
    backdrop-filter: blur(5px);
    background: rgba(255,255,255,0);
    transition: 0.3s;
-
 }
 .news-li:after {
    position: absolute;
@@ -320,7 +320,7 @@
 .fp-viewing-incruit #fp-nav ul li .fp-tooltip {
    color: rgba(0,0,0,0.7);
 }
-#fp-nav.fp-right {right:35px; transition: 0.5s;}
+#fp-nav.fp-right {right:20px; transition: 0.5s;}
 #osc-main.fp-viewing-ft #fp-nav { display: none;}
 
 /* 네비디자인 */
@@ -347,10 +347,12 @@
 }
 
 #osc-main.fp-viewing-media #fp-nav ul li a span, 
-#osc-main.fp-viewing-3 #fp-nav ul li a span {border-color: #000;}
-#osc-main.fp-viewing-2 #fp-nav ul li a.active span, #osc-main.fp-viewing-2 #fp-nav ul li:hover a.active span {border:1px solid #000; background: #fff;}
-#osc-main.fp-viewing-3 #fp-nav ul li a.active span, #osc-main.fp-viewing-3 #fp-nav ul li:hover a.active span {border:1px solid #000; background: #fff;}
-#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span {background-color: #000; transform: scale(1.2);}
+#osc-main.fp-viewing-incruit #fp-nav ul li a span {border-color: #000;}
+#osc-main.fp-viewing-media #fp-nav ul li a.active span, #osc-main.fp-viewing-media #fp-nav ul li:hover a.active span {border:1px solid #000; background: #fff;}
+#osc-main.fp-viewing-incruit #fp-nav ul li a.active span, #osc-main.fp-viewing-incruit #fp-nav ul li:hover a.active span {border:1px solid #000; background: #fff;}
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span {
+   background-color: #000; transform: scale(1.2);
+}
 
 /* 구글아이콘 */
 .dev-list .material-symbols-outlined,

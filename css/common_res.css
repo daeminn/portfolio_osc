@@ -74,12 +74,14 @@
       left: 8%;
       z-index: 1;
    }
+   .osc-logo a {height: 100px;}
    .gnb-wrap{
       top: 0;
       display: flex;    
       background: transparent;   
       overflow: initial;
       transition: 0.3s;
+      z-index: 0;
    }
    #osc-gnb {
       position: relative;
@@ -141,8 +143,8 @@
    }
    .depth2 a:hover { padding-left: 5px; color: #fff; font-weight: 600;}
 
-   #osc-hd:hover .all-menu-open:hover{
-      color: #f00;
+   #osc-hd:hover .all-menu-open:hover, .login-form-open:hover{
+      color: #0A58CA;
    }
    #osc-hd.active .gnb-wrap {
       height: 500px;
@@ -177,7 +179,7 @@
    .all-menu-open, .all-menu-close {
       position: absolute;
       top: 35px;
-      right: 50%;
+      right: 60%;
       display: block;
       color: #fff;
       height: 35px;
@@ -320,9 +322,10 @@
       background-color: #000;
       opacity: 0.5;
       z-index: 2;
+      cursor: url(../images/modal-close.svg), pointer;
    }
    
-  .login-form {
+  /* .login-form {
    position: fixed;
    top: 0;
    right: -30%;
@@ -332,8 +335,8 @@
    background-color: #000;
    transition: all .6s cubic-bezier(.77,0,.175,1);
    z-index: 101;
-  }
-  .login {
+  } */
+  /* .login {
   	margin:0 auto;
   }
   .login-form.open {
@@ -343,11 +346,11 @@
    display: block;
   }
   .login-form > form {text-align: center;}
-  .join-btn, .login-btn{background-color: #fff;}   
+  .join-btn, .login-btn {background-color: #fff;}    */
   .login-form-open {
    position: absolute;
    top: 35px;
-   right: 25%;
+   right: 29%;
    display: block;
    height: 35px;
    color: #fff;
@@ -360,8 +363,9 @@
    color: #fff;
    z-index: 11;
    }
-   .form-control:focus::placeholder {color: transparent;}
+   /* .form-control:focus::placeholder {color: transparent;}*/
    .login-form-open .material-symbols-outlined,.login-form-close .material-symbols-outlined {font-size: 35px;}
+   /*
    .join-btn, .submit-btn, .signup-btn {color: #000;} 
    .login-txt {margin-bottom: 15px; color: #fff;}
    .signup-btn, .submit-btn, .logout, #updateBtn, #joinBtn{
@@ -372,5 +376,5 @@
     border-radius: 5px;
     cursor:pointer;
    }
-   .submit-btn {cursor: pointer;}
+   .submit-btn {cursor: pointer;} */
 }

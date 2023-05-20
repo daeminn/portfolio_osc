@@ -1,0 +1,57 @@
+.sub-main-title {
+  max-width: 80rem;
+  padding-bottom: 50px;
+  font-size: 3rem;
+}
+.tabcon-txt ul,
+.tabcon-txt ol {
+  list-style-type: circle;
+  padding: 30px;
+}
+.AIFImg {margin-left: 20px;}
+.tab-menu {overflow: hidden;}
+.tab-li {float: left;}
+.tab-li.on {
+  background-color: #f5f5f5;
+}
+.tab-li a{
+  display: block;
+  padding: 30px 50px;
+}
+.tabcontent {
+  display: none;
+  padding: 80px;
+  background-color: #f5f5f5;
+}
+.tabcontent.show {display: block;}
+.tabcontent h4 {color: #222; margin-top: 30px;}
+
+.tabcon-title {
+  font-size: 2em;    
+  color: #444;
+  margin: 20px 0;
+}
+.tabcon-txt {
+  margin: 10px 0 10px 50px;
+  color: #333; 
+  font-weight: 300; 
+  line-height: 2;
+}
+.tabcon-txt h5 {
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+/* 모바일 */
+@media screen and (max-width:767px) {
+  .tabcontent {padding: 30px;}
+  .row {padding: 0;}
+  .sub-main-content img {width: 100%;}
+  .tabcontent {padding: 15px;}
+  .tabcon-txt {margin: 0;}
+  .hidden {display: none;}
+}
+/* 태블릿부터*/
+@media screen and (min-width:767px) and (max-width: 1023px) {
+
+}

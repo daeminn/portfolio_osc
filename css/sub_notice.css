@@ -1,0 +1,13 @@
+#osc-main-container {
+  padding: 7%;
+}
+
+/* 태블릿만 */
+@media screen and (min-width:768px) and (max-width:1023px) {}
+ 
+/* PC */
+@media screen and (min-width:1280px) {
+  #osc-main-container {
+    padding: 7% 8% 5% 28%;
+  }  
+}
