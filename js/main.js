@@ -11,10 +11,10 @@ $(function(){
      scrollingSpeed: 1000,
      normalScrollElements: '.gnb-wrap, #all-menu',
      lazyLoading: true,
-     showActiveTooltip:true,
-     anchors: ["main", "biz", "media", "incruit", "ft"]  
-    });
-   
+     showActiveTooltip: true,
+     anchors: ["main", "biz", "media", "incruit", "ft"] 
+   });
+
   rwd();
 
   $(window).resize(function () {
@@ -26,8 +26,7 @@ $(function(){
    wH = window.innerHeight;
    if (wW < 768) {
       body.addClass("mo").removeClass("tb pc");
-      $(".develop, .business").css("width","inherit")      
-   
+      $(".develop, .business").css("width","inherit");
    } else if (wW >= 768 && wW < 1024) {
       body.addClass("tb").removeClass("mo pc");
       $(".develop, .business").css("width","50%");

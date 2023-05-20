@@ -1,18 +1,17 @@
 $(function(){
-    $("#osc-ft").removeClass("fp-auto-height");
     //페이지 구분
     let page = $("body").attr("id");
     let mainNum = page.slice(3,4); //대메뉴 번호
     let subNum = page.slice(5,6); //서브메뉴 번호
     let lnbActiveNum = page.slice(-1); //현재 메뉴 표시
-    let bgColor = ["#333", "#333", "#333", "#A62029"];
+    let bgColor = "#444";
     //1. 제목 설명 밑 배경색 지정
     $(".lnb-depth1").css("background-color", "#fefefe");
-    $(".lnb-depth2").css("background-color", bgColor[mainNum]);
+    $(".lnb-depth2").css("background-color", bgColor);
 
     //2. 서브비주얼 이미지 출력
     // let subBgImg = "url('./images/sub/sub_bg_0" + mainNum + ".jpg')";
-    let subHdBgImg = "url('./images/sub/sub_visual_0" + mainNum + ".jpg')";
+    let subHdBgImg = "url('/osc/images/sub/sub_visual_0" + mainNum + ".jpg')";
 
     // $(".sub-bg-area").css("background-image", subBgImg);
     $(".hgroup").css("background-image", subHdBgImg);
@@ -36,20 +35,23 @@ $(function(){
 
     //서브메뉴 URL
     let subUrl = [];
-    subUrl[0] = ["../sub_introduce.html", "#", "#"];
-    subUrl[1] = ["#", "../sub_RA.html", "#", "#", "#", "#"];
-    subUrl[2] = ["sub_MBbones.html", "#"];
-    subUrl[3] = ["#", "#","#"];
-    subUrl[4] = ["#", "#","#","#"];
-    subUrl[5] = ["#"];
-    subUrl[6] = ["#","#"];
+    subUrl[0] = ["/osc/sub_introduce.html", "#", "/osc/sub_Contact_Us.html"];
+    subUrl[1] = ["/osc/sub_pipelines.html", "/osc/sub_RA.html", "/osc/sub_ITP.html", "/osc/sub_AML.html", "/osc/sub_LC.html", "/osc/sub_Alzheimers.html"];
+    subUrl[2] = ["/osc/sub_MBbones.html", "#"];
+    subUrl[3] = ["/osc/sub_PMaterial.html", "#","#"];
+    subUrl[4] = ["/g5/bbs/board.php?bo_table=osc_notice", "#","#","#"];
+    subUrl[5] = ["/osc/sub_Careers.html"];
+    subUrl[6] = ["#","/osc/sub_report.html"];
 
     //서브메뉴 레이블 설명
     let subDesc = [];
-    subDesc[0] = ["Translating science into medicine", "#", "#", "#", "#"];
-    subDesc[1] = ["인류의 건강을 선도하는 생명공학 기업","세계적 전문 전임상 / 임상대행 기관들을 통해 글로벌 신약을 개발하고 있습니다.","#","#","#","#"];
-    subDesc[2] = ["인류의 건강을 선도하는 생명공학 기업", "#", "#"];
-    subDesc[3] = ["#", "1", "2", "3", "4"];
+    subDesc[0] = ["Translating science into medicine", "#", ""];
+    subDesc[1] = ["인류의 건강을 선도하는 생명공학 기업","세계적 전문 전임상 / 임상대행 기관들을 통해 글로벌 신약을 개발하고 있습니다.","세계적 전문 전임상 / 임상대행 기관들을 통해 글로벌 신약을 개발하고 있습니다.","세계적 전문 전임상 / 임상대행 기관들을 통해 글로벌 신약을 개발하고 있습니다.","세계적 전문 전임상 / 임상대행 기관들을 통해 글로벌 신약을 개발하고 있습니다.","세계적 전문 전임상 / 임상대행 기관들을 통해 글로벌 신약을 개발하고 있습니다."];
+    subDesc[2] = ["인류의 건강을 선도하는 생명공학 기업", "#"];
+    subDesc[3] = ["인류의 건강을 선도하는 생명공학 기업", "#", "#"];
+    subDesc[4] = ["", "#", "#", "#"];
+    subDesc[5] = [""];
+    subDesc[6] = ["", ""];
     
     // 4. 제목과 설명 출력
     $(".sub-h2").text(sub[mainNum][subNum]);
@@ -58,7 +60,7 @@ $(function(){
     
     
     // 5. 서브메뉴(lnb) 리스트 생성
-    let lnb1 = $(".lnb-depth1");
+    let lnb1 = $(".lnb-depth1") || $(".lnb-depth1");
     let lnb2 = $(".lnb-depth2");
     
     lnb1.append("<li class=\"active\"><a href=\"#void\">" + main[mainNum] + "</a></li>");
@@ -70,52 +72,19 @@ $(function(){
         lnb2.append("<li><a href=\"" + subUrl[mainNum][k] +"\">" + sub[mainNum][k] + "</a></li>");
     }    
 
-    // 6. lnb 작동    
-    let lnbHeight = $('.lnb>li').eq(1).height();
-    let subLength = sub[mainNum].length;
-    let mainLength = main.length;
-    let lnbFirstHeight = $('.lnb').height();
-    
-    lnb1.on({
+    // 6. lnb 작동
+    $(".lnb").on({
         "click": function(){
-            $(this).css("height", lnbHeight * mainLength + lnbFirstHeight + 1);    
-            $(this).css("border-bottom", "1px solid #ddd");
-
-            if($(this).height() > lnbFirstHeight){//lnb작동 후 높이가 처음 높이보다 클 경우
-
-                $(this).css("height", $('#osc-lnb').height());
-                $(this).css("border", "none");
-            }
-        },
-        "mouseleave": function(){
-            $(this).css("height", $('#osc-lnb').height());
-            $(this).css("border", "none");
+            $(this).toggleClass("active"); // 클릭으로 메뉴 활성/비활성
         }
+        // "mouseenter focusin": function(){ /* 마우스오버로 메뉴 활성/비활성 */
+        //     $(this).addClass("active");
         // },
         // "mouseleave focusout": function(){
-        //     $(this).css("height", $('#osc-lnb').height());  
-        //     $(this).css("border", "none");
-        // }
+        //     $(this).removeClass("active");
+        // } 
     });
-    // console.log(lnbHeight * mainLength + lnbFirstHeight);
-    lnb2.on({
-        "click": function(){
-            $(this).css("height", lnbHeight * subLength + lnbFirstHeight);
-            
-            if($(this).height() > lnbFirstHeight){
-                    $(this).css("height", $('#osc-lnb').height());
-                }
-        },
-        "mouseleave": function(){
-            $(this).css("height", $('#osc-lnb').height());
-        }
-        // "mouseenter focusin": function(){
-        //     $(this).css("height", lnbHeight * subLength + lnbFirstHeight);    
-        // },
-        // "mouseleave focusout": function(){
-        //     $(this).css("height", $('#osc-lnb').height());  
-        // }
-    });
+
     //7. 본문 글자크기 확대/축소
     let fz = 16;
     let fzMax = 20;
@@ -124,18 +93,16 @@ $(function(){
     $(".txt-reset-btn").click(function(){
         fz = 16;
         $("#osc-main-container").css("font-size", fz + "px");
-        $(".lnb").css("height", $('#osc-lnb').height());
+        
     });
     $(".txt-size-plus-btn").click(function(){
         // condition ? true : false;
         fz == fzMax ? fz = fzMax : fz++;
         $("#osc-main-container").css("font-size", fz + "px");
-        $(".lnb").css("height", $('#osc-lnb').height());
     });
     $(".txt-size-minus-btn").click(function(){
         fz == fzMin ? fz = fzMin : fz--;
         $("#osc-main-container").css("font-size", fz + "px");
-        $(".lnb").css("height", $('#osc-lnb').height());
     });
 
      // 8. LNB고정을 위한 값 설정

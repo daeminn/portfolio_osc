@@ -2,124 +2,155 @@ $(window).ready(function () {
    let wW = window.innerWidth;
    let wH = window.innerHeight;
    const body = $("body");
-   const hd = $('#osc-hd');
+   const hd = $('#osc-hd ');
    let gnbOpener = $('.gnb-open');
    let gnbCloser = $('.gnb-close');
    let gnbWrap = $('.gnb-wrap');
-   let depth1 = $('.depth1');
-   let depth1a = $('.depth1>li>a')
+   let depth1a = $('.depth1>li>a');
    let menuPullDown = $('.all-menu-open');
    let menuCloser = $('.all-menu-close');
    let modal = $('.modal');
    let allMenu = $('#all-menu');
    let depth2 = $(".depth2");
-   let lnb = $(".lnb");
-   let loginForm = $(".login-form");
    let loginFormOpen = $(".login-form-open");
    let loginFormClose = $(".login-form-close, .modal");
+   
    rwd();
 
    $(window).resize(function () {
       rwd();
    });
-
+   
    function rwd() {
       wW = window.innerWidth;
-      wH = window.innerHeight;
       if (wW < 768) {
          body.addClass("mo").removeClass("tb pc");
-         depth2.stop().slideUp();
-         lnb.css("height","inherit");
+         depth1a.click(function(e) {
+            e.preventDefault();
+         })
       } else if (wW >= 768 && wW < 1024) {
-         body.addClass("tb").removeClass("mo pc");         
-         depth2.stop().slideUp();      
-         lnb.css("height","inherit");
-      } else {
+         body.addClass("tb").removeClass("mo pc");
+         depth1a.click(function(e) {
+            e.preventDefault();
+         })
+      } 
+      else {
          body.addClass("pc").removeClass("mo tb");
-         depth2.show();
+         depth2.stop().show();
       }
-   }  
+   };  
 
-   //모바일 GNB 작동
-   $(".depth1>li").on({
-      "click": (function () {
-         if (body.hasClass("mo")||body.hasClass("tb")) {
-            $(this).children(".depth2").stop().slideToggle(300);
-            $(this).siblings().find(".depth2").stop().slideUp(300);
-         }
-      })
-   });
-
-
-   
    //PC GNB 활성화
-   hd.on({
-      "mouseenter": function () {
-         hd.addClass("active");
-         if (body.hasClass("pc")) {
-            
+   function pcGnb() {
+      hd.on({
+         "mouseenter": function () {
+            if (body.hasClass("pc")) {
+                  $(this).addClass("active");
+                  if($("#ol_before, #ol_after").hasClass("open")) { 
+                     $(this).off(); //로그인창이 열리면 헤더 작동 방지
+                  }
+            }
+         },
+         "mouseleave": function () {
+            if (body.hasClass("pc")) {
+               $(this).removeClass("active");
+            }
          }
-      },
-      "mouseleave": function () {
-         if (body.hasClass("pc")) {
-            hd.removeClass("active");
-         }
-      }
-   });
-  
+      });
+   };
+   pcGnb();
 
-   //모바일 GNB 열기
-   gnbOpener.on({
-      "click": function () {
-         if (body.hasClass("mo")||body.hasClass("tb")) {
-            gnbWrap.addClass("down");
+   function mobileGnbOpCl() { //모바일 GNB 열고 닫기
+      gnbOpener.on({
+         "click": function () {
+            if (body.hasClass("mo")||body.hasClass("tb")) {
+               gnbWrap.addClass("down");
+            }
          }
-      }
-   });
-   
-   //모바일 GNB 닫기
-   gnbCloser.on({
-      "click": function () {
-         if (body.hasClass("mo")||body.hasClass("tb")) { 
-            gnbWrap.removeClass("down")
-            depth2.stop().slideUp();
+      });
+      gnbCloser.on({
+         "click": function () {
+            if (body.hasClass("mo")||body.hasClass("tb")) { 
+               gnbWrap.removeClass("down")
+               depth2.stop().slideUp();
+            }
          }
-      }
+      });
+   };
+   mobileGnbOpCl();
+
+   function mobileGnb() { //모바일 GNB depth1 작동
+      $(".depth1>li").on({
+         "click": (function () {
+            if (body.hasClass("mo")||body.hasClass("tb")) {
+               $(this).children(".depth2").stop().slideDown(300);
+               $(this).siblings().find(".depth2").stop().slideUp(300);
+            }
+         })
+      });
+   };
+   mobileGnb();
+
+   function siteMapOpCl(){ //사이트맵 열고 닫기
+      menuPullDown.on ({
+         "click":function() {
+            if (body.hasClass("pc")) {
+               allMenu.addClass("slide");
+               $(this).fadeOut();
+            }
+         }
+      });
+      menuCloser.on ({
+         "click":function() {
+            if (body.hasClass("pc")) {
+               allMenu.removeClass("slide");
+               menuPullDown.fadeIn();
+            }
+         }
+      });
+   };
+   siteMapOpCl();
+
+   function loginFornOpCl(){  //로그인폼 열고닫기
+      loginFormOpen.on ({  
+         "click":function() {
+            if (body.hasClass("pc")) {
+               $("#ol_before").addClass("open");
+               $("#ol_after").addClass("open");
+               modal.show();
+               hd.removeClass("active");
+               
+            }
+         }
+      });
+      loginFormClose.on ({
+         "click":function() {
+            if (body.hasClass("pc")) {
+               $("#ol_before").removeClass("open");
+               $("#ol_after").removeClass("open");
+               modal.hide();
+               loginFormOpen.show();
+               $(".regist-modal").hide();
+               $(".find-modal").hide();
+            }
+         }
+      });
+   };
+   loginFornOpCl();
+
+   //패스워드 찾기 모달
+   $('.pw-find').click(function(){
+      $(".find-modal").show();
    });
 
-   //사이트맵 열기
-   menuPullDown.on ({
-      "click":function() {
-         if (body.hasClass("pc")) {
-            allMenu.addClass("slide");
-            $(this).fadeOut();
-         }
-      }
-   })
-   //사이트맵 닫기
-   menuCloser.on ({
-      "click":function() {
-         if (body.hasClass("pc")) {
-            allMenu.removeClass("slide");
-            menuPullDown.fadeIn();
-         }
-      }
-   })
+   //회원가입 모달
+   $('.btn-join').click(function(){
+      $(".regist-modal").show();
+   });
 
-   loginFormOpen.on ({
-      "click":function() {
-         if (body.hasClass("pc")) {
-            loginForm.addClass("open");
-            modal.show();
-         }
-      }
-   })
-   loginFormClose.on ({
-      "click":function() {
-         if (body.hasClass("pc")) {
-            loginForm.removeClass("open");
-            modal.hide();
-         }
-      }
-   })
+   // $("a").click(function(){
+   //    if($(this).attr("href") === "#"){
+   //       return false;
+   //    }
+   // })
 })
